@@ -15,7 +15,10 @@
 
     <groupId>com.xkcoding</groupId>
     <artifactId>scaffold</artifactId>
-    <version>${scaffold.version}</version>
+    <version>0.0.1</version>
+    <modules>
+        <module>scaffold-launcher</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>scaffold</name>

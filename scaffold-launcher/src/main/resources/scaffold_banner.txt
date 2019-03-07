@@ -1,0 +1,11 @@
+${AnsiColor.BRIGHT_GREEN}
+
+ ######   ######     ###    ######## ########  #######  ##       ########
+##    ## ##    ##   ## ##   ##       ##       ##     ## ##       ##     ## 
+##       ##        ##   ##  ##       ##       ##     ## ##       ##     ## 
+ ######  ##       ##     ## ######   ######   ##     ## ##       ##     ## 
+      ## ##       ######### ##       ##       ##     ## ##       ##     ## 
+##    ## ##    ## ##     ## ##       ##       ##     ## ##       ##     ## 
+ ######   ######  ##     ## ##       ##        #######  ######## ########
+
+${AnsiColor.BRIGHT_BLUE}:: scaffold 🤓🤓🤓 :: ${spring.application.name} :: ${AnsiColor.RED}${scaffold.env}${AnsiColor.BRIGHT_BLUE} 🎉 🎉 🎉 :: Running Spring Boot ${spring-boot.version} :: ${AnsiColor.DEFAULT}
