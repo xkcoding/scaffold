@@ -17,6 +17,7 @@
     <artifactId>scaffold</artifactId>
     <version>0.0.1</version>
     <modules>
+        <module>scaffold-common</module>
         <module>scaffold-launcher</module>
     </modules>
     <packaging>pom</packaging>
@@ -59,10 +60,17 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <maven.plugin.version>3.8.0</maven.plugin.version>
 
         <scaffold.version>0.0.1</scaffold.version>
         <mica.auto.version>1.0.2</mica.auto.version>
+        <hutool.version>4.5.1</hutool.version>
+        <guava.version>27.0.1-jre</guava.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger.models.version>1.5.21</swagger.models.version>
+        <swagger.bootstrapui.version>1.9.0</swagger.bootstrapui.version>
+        <mybatis.plus.version>3.1.0</mybatis.plus.version>
 
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
