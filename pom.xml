@@ -21,6 +21,7 @@
         <module>scaffold-common</module>
         <module>scaffold-test</module>
         <module>scaffold-log</module>
+        <module>scaffold-swagger</module>
     </modules>
     <packaging>pom</packaging>
 
