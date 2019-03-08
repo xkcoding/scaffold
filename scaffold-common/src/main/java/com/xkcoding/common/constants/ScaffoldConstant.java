@@ -43,4 +43,12 @@ public interface ScaffoldConstant {
      * 默认失败消息
      */
     String DEFAULT_FAILURE_MESSAGE = "操作失败";
+    /**
+     * 日志默认状态
+     */
+    String LOG_NORMAL_TYPE = "1";
+    /**
+     * 匿名用户
+     */
+    String ANONYMOUS_USER_NAME = "匿名用户";
 }
