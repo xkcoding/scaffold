@@ -14,6 +14,7 @@ import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.ObjectUtils;
 
 /**
  * <p>
@@ -46,7 +47,7 @@ public class ServerInfo implements SmartInitializingSingleton {
     public void afterSingletonsInstantiated() {
         this.hostName = IpUtil.getHostName();
         this.ip = IpUtil.getHostIp();
-        this.port = serverProperties.getPort();
+        this.port = ObjectUtils.isEmpty(serverProperties.getPort()) ? 8080 : serverProperties.getPort();
         this.ipWithPort = String.format("%s:%d", ip, port);
     }
 }
