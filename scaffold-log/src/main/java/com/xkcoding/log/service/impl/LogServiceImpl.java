@@ -14,7 +14,6 @@ import com.xkcoding.log.model.LogApi;
 import com.xkcoding.log.model.LogCustom;
 import com.xkcoding.log.model.LogError;
 import com.xkcoding.log.service.LogService;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
@@ -29,7 +28,6 @@ import lombok.extern.slf4j.Slf4j;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Slf4j
 public class LogServiceImpl implements LogService {
     /**
      * 保存操作日志
@@ -39,7 +37,6 @@ public class LogServiceImpl implements LogService {
      */
     @Override
     public R<Boolean> saveApiLog(LogApi logApi) {
-        log.info("【logApi】= {}", logApi);
         return R.success();
     }
 
@@ -51,7 +48,6 @@ public class LogServiceImpl implements LogService {
      */
     @Override
     public R<Boolean> saveErrorLog(LogError logError) {
-        log.info("【logError】= {}", logError);
         return R.success();
     }
 
@@ -63,7 +59,6 @@ public class LogServiceImpl implements LogService {
      */
     @Override
     public R<Boolean> saveCustomLog(LogCustom logCustom) {
-        log.info("【logCustom】= {}", logCustom);
         return R.success();
     }
 }
