@@ -10,7 +10,6 @@ package com.xkcoding.common.utils.xss;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;
-import cn.hutool.http.HTMLFilter;
 import com.google.common.base.Charsets;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -27,9 +26,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * <p>
  * XSS过滤处理
+ * </p>
  *
- * @author Chill
+ * @package: com.xkcoding.common.utils.xss
+ * @description: XSS过滤处理
+ * @author: yangkai.shen
+ * @date: Created in 2019-03-08 16:35
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
@@ -41,7 +48,7 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
     /**
      * html过滤
      */
-    private final static HTMLFilter HTML_FILTER = new HTMLFilter();
+    private final static HtmlFilter HTML_FILTER = new HtmlFilter();
 
     /**
      * 缓存报文,支持多次读取流
