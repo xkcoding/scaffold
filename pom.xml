@@ -17,8 +17,9 @@
     <artifactId>scaffold</artifactId>
     <version>0.0.1</version>
     <modules>
-        <module>scaffold-common</module>
         <module>scaffold-launcher</module>
+        <module>scaffold-common</module>
+        <module>scaffold-test</module>
     </modules>
     <packaging>pom</packaging>
 
