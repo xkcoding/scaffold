@@ -163,7 +163,7 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
      *
      * @return HttpServletRequest
      */
-    public HttpServletRequest getOrgRequest() {
+    public HttpServletRequest getOriginRequest() {
         return originRequest;
     }
 
@@ -173,9 +173,9 @@ public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
      * @param request request
      * @return HttpServletRequest
      */
-    public static HttpServletRequest getOrgRequest(HttpServletRequest request) {
+    public static HttpServletRequest getOriginRequest(HttpServletRequest request) {
         if (request instanceof XssHttpServletRequestWrapper) {
-            return ((XssHttpServletRequestWrapper) request).getOrgRequest();
+            return ((XssHttpServletRequestWrapper) request).getOriginRequest();
         }
 
         return request;
