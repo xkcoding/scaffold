@@ -14,6 +14,8 @@
     <version>${scaffold.version}</version>
     <packaging>jar</packaging>
 
+    <description>SpringBoot启动器工具</description>
+
     <dependencies>
         <!--Spring-->
         <dependency>

@@ -14,6 +14,8 @@
     <version>${scaffold.version}</version>
     <packaging>jar</packaging>
 
+    <description>单元测试工具</description>
+
     <dependencies>
         <dependency>
             <groupId>com.xkcoding</groupId>
