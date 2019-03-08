@@ -11,6 +11,7 @@ package com.xkcoding.launcher;
 
 import com.xkcoding.launcher.constants.AppConstant;
 import com.xkcoding.launcher.service.LauncherService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.*;
@@ -33,6 +34,7 @@ import java.util.function.Function;
  * @version: V1.0
  * @modified: yangkai.shen
  */
+@Slf4j
 public class ScafflodApplication {
     /**
      * 创建Spring上下文
@@ -53,8 +55,10 @@ public class ScafflodApplication {
         ConfigurableEnvironment environment = new StandardEnvironment();
         MutablePropertySources propertySources = environment.getPropertySources();
         propertySources.addFirst(new SimpleCommandLinePropertySource(args));
-        propertySources.addLast(new MapPropertySource(StandardEnvironment.SYSTEM_PROPERTIES_PROPERTY_SOURCE_NAME, environment.getSystemProperties()));
-        propertySources.addLast(new SystemEnvironmentPropertySource(StandardEnvironment.SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME, environment.getSystemEnvironment()));
+        propertySources.addLast(new MapPropertySource(StandardEnvironment.SYSTEM_PROPERTIES_PROPERTY_SOURCE_NAME, environment
+                .getSystemProperties()));
+        propertySources.addLast(new SystemEnvironmentPropertySource(StandardEnvironment.SYSTEM_ENVIRONMENT_PROPERTY_SOURCE_NAME, environment
+                .getSystemEnvironment()));
         // 获取配置的环境变量
         String[] activeProfiles = environment.getActiveProfiles();
         // 判断环境:dev、test、prod
@@ -81,7 +85,7 @@ public class ScafflodApplication {
         }
         String startJarPath = ScafflodApplication.class.getResource("/").getPath().split("!")[0];
         String activePros = joinFun.apply(activeProfileList.toArray());
-        System.out.println(String.format("----启动中，读取到的环境变量:[%s]，jar地址:[%s]----", activePros, startJarPath));
+        log.info("----启动中，读取到的环境变量:[{}]，jar地址:[{}]----", activePros, startJarPath);
         Properties props = System.getProperties();
         props.setProperty("spring.application.name", appName);
         props.setProperty("spring.profiles.active", profile);
@@ -94,7 +98,7 @@ public class ScafflodApplication {
         // 加载自定义组件
         ServiceLoader<LauncherService> loader = ServiceLoader.load(LauncherService.class);
         // 启动组件
-        loader.forEach(launcherService -> launcherService.launcher(builder, appName, profile));
+        loader.forEach(launcherService -> launcherService.launcher(builder, appName, profile, isLocalDev()));
         return builder;
     }
 

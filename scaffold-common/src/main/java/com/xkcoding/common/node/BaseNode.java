@@ -30,20 +30,20 @@ import java.util.List;
 @Data
 public class BaseNode implements INode {
 
-	/**
-	 * 主键ID
-	 */
-	protected Integer id;
+    /**
+     * 主键ID
+     */
+    protected Integer id;
 
-	/**
-	 * 父节点ID
-	 */
-	protected Integer parentId;
+    /**
+     * 父节点ID
+     */
+    protected Integer parentId;
 
-	/**
-	 * 子孙节点
-	 */
-	@JsonInclude(JsonInclude.Include.NON_EMPTY)
-	protected List<INode> children = new ArrayList<>();
+    /**
+     * 子孙节点
+     */
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    protected List<INode> children = new ArrayList<>();
 
 }

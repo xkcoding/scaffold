@@ -31,7 +31,8 @@ public interface LauncherService {
      * @param builder SpringApplicationBuilder
      * @param appName 服务名
      * @param profile 配置名
+     * @param isLocalDev 是否本地开发
      */
-    void launcher(SpringApplicationBuilder builder, String appName, String profile);
+    void launcher(SpringApplicationBuilder builder, String appName, String profile, boolean isLocalDev);
 
 }

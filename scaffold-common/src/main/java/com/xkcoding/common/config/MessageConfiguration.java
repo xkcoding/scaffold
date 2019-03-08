@@ -65,6 +65,7 @@ public class MessageConfiguration implements WebMvcConfigurer {
      * @return FilterRegistrationBean
      */
     @Bean
+    @SuppressWarnings("unchecked")
     public FilterRegistrationBean xssFilterRegistration() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setDispatcherTypes(DispatcherType.REQUEST);

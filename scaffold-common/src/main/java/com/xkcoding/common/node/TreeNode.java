@@ -28,10 +28,10 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class TreeNode extends BaseNode {
 
-	private String title;
+    private String title;
 
-	private Integer key;
+    private Integer key;
 
-	private Integer value;
+    private Integer value;
 
 }

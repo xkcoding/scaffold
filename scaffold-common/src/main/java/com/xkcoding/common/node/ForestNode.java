@@ -29,15 +29,15 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class ForestNode extends BaseNode {
 
-	/**
-	 * 节点内容
-	 */
-	private Object content;
+    /**
+     * 节点内容
+     */
+    private Object content;
 
-	public ForestNode(Integer id, Integer parentId, Object content) {
-		this.id = id;
-		this.parentId = parentId;
-		this.content = content;
-	}
+    public ForestNode(Integer id, Integer parentId, Object content) {
+        this.id = id;
+        this.parentId = parentId;
+        this.content = content;
+    }
 
 }
