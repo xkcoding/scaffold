@@ -22,6 +22,7 @@
         <module>scaffold-test</module>
         <module>scaffold-log</module>
         <module>scaffold-swagger</module>
+        <module>scaffold-web</module>
     </modules>
     <packaging>pom</packaging>
 
