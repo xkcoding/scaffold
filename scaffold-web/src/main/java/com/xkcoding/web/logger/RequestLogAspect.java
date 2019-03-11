@@ -115,30 +115,46 @@ public class RequestLogAspect {
             }
         });
         needRemoveKeys.forEach(paraMap::remove);
+        // 构建成一条长 日志，避免并发下日志错乱
+        StringBuilder logBuilder = new StringBuilder(500);
+        // 日志参数
+        List<Object> logArgs = new ArrayList<>();
+        logBuilder.append("\n\n================  Request Start  ================\n");
         // 打印请求
-        log.debug("================  Request Start  ================");
         if (paraMap.isEmpty()) {
-            log.debug("===> {}: {}", requestMethod, requestURI);
+            logBuilder.append("===> {}: {}\n");
+            logArgs.add(requestMethod);
+            logArgs.add(requestURI);
         } else {
-            log.debug("===> {}: {} Parameters: {}", requestMethod, requestURI, JSONUtil.toJsonStr(paraMap));
+            logBuilder.append("===> {}: {} Parameters: {}\n");
+            logArgs.add(requestMethod);
+            logArgs.add(requestURI);
+            logArgs.add(JSONUtil.toJsonStr(paraMap));
         }
         // 打印请求头
         Enumeration<String> headers = request.getHeaderNames();
         while (headers.hasMoreElements()) {
             String headerName = headers.nextElement();
             String headerValue = request.getHeader(headerName);
-            log.debug("===headers===  {} : {}", headerName, headerValue);
+            logBuilder.append("===headers===  {} : {}\n");
+            logArgs.add(headerName);
+            logArgs.add(headerValue);
         }
         // 打印执行时间
         long startNs = System.nanoTime();
         try {
             Object result = point.proceed();
-            log.debug("===Result===  {}", JSONUtil.toJsonStr(result));
+            logBuilder.append("===Result===  {}\n");
+            logArgs.add(JSONUtil.toJsonStr(result));
             return result;
         } finally {
             long tookMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startNs);
-            log.debug("<=== {}: {} ({} ms)", request.getMethod(), requestURI, tookMs);
-            log.debug("================   Request End   ================");
+            logBuilder.append("<=== {}: {} ({} ms)");
+            logArgs.add(requestMethod);
+            logArgs.add(requestURI);
+            logArgs.add(tookMs);
+            logBuilder.append("\n================   Request End   ================\n");
+            log.info(logBuilder.toString(), logArgs.toArray());
         }
     }
 
