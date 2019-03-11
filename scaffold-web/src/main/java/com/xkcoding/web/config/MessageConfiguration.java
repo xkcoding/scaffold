@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.common.config;
+package com.xkcoding.web.config;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,19 +26,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.servlet.DispatcherType;
 import java.util.List;
 
-/**
- * <p>
- * 消息配置类
- * </p>
- *
- * @package: com.xkcoding.common.config
- * @description: 消息配置类
- * @author: yangkai.shen
- * @date: Created in 2019-03-07 17:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
- */
 @Configuration
 @AllArgsConstructor
 @Order(Ordered.HIGHEST_PRECEDENCE)

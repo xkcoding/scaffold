@@ -28,7 +28,7 @@ import com.xkcoding.log.service.LogService;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public class LogServiceImpl implements LogService {
+public class DefaultScaffoldLogServiceImpl implements LogService {
     /**
      * 保存操作日志
      *

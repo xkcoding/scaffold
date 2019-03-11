@@ -7,7 +7,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.common.utils;
+package com.xkcoding.web.utils;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
@@ -21,19 +21,6 @@ import com.xkcoding.common.query.PageQuery;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * <p>
- * Mybatis-Plus 工具类
- * </p>
- *
- * @package: com.xkcoding.common.utils
- * @description: Mybatis-Plus 工具类
- * @author: yangkai.shen
- * @date: Created in 2019-03-07 16:44
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
- */
 public class MpUtil {
     /**
      * 驼峰

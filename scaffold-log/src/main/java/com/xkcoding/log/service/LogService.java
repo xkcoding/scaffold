@@ -30,25 +30,25 @@ public interface LogService {
     /**
      * 保存操作日志
      *
-     * @param log 操作日志实体
+     * @param logApi 操作日志实体
      * @return 是否保存成功
      */
-    R<Boolean> saveApiLog(LogApi log);
+    R<Boolean> saveApiLog(LogApi logApi);
 
     /**
      * 保存错误日志
      *
-     * @param log 错误日志实体
+     * @param logError 错误日志实体
      * @return 是否保存成功
      */
-    R<Boolean> saveErrorLog(LogError log);
+    R<Boolean> saveErrorLog(LogError logError);
 
     /**
      * 保存自定义日志
      *
-     * @param log 自定义日志实体
+     * @param logCustom 自定义日志实体
      * @return 是否保存成功
      */
-    R<Boolean> saveCustomLog(LogCustom log);
+    R<Boolean> saveCustomLog(LogCustom logCustom);
 
 }

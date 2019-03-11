@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletRequest;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public class SecurityServiceImpl implements SecurityService {
+public class DefaultScaffoldSecurityServiceImpl implements SecurityService {
 
     /**
      * 获取当前用户姓名

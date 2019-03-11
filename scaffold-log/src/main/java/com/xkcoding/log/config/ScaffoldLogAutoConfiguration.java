@@ -18,8 +18,8 @@ import com.xkcoding.log.event.ErrorLogListener;
 import com.xkcoding.log.logger.ScaffoldLogger;
 import com.xkcoding.log.service.LogService;
 import com.xkcoding.log.service.SecurityService;
-import com.xkcoding.log.service.impl.LogServiceImpl;
-import com.xkcoding.log.service.impl.SecurityServiceImpl;
+import com.xkcoding.log.service.impl.DefaultScaffoldLogServiceImpl;
+import com.xkcoding.log.service.impl.DefaultScaffoldSecurityServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -50,13 +50,13 @@ public class ScaffoldLogAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     public LogService logService() {
-        return new LogServiceImpl();
+        return new DefaultScaffoldLogServiceImpl();
     }
 
     @Bean
     @ConditionalOnMissingBean
     public SecurityService securityService() {
-        return new SecurityServiceImpl();
+        return new DefaultScaffoldSecurityServiceImpl();
     }
 
     @Bean
