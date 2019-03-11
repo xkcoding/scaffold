@@ -38,3 +38,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+#配置日志地址
+logging:
+  config: classpath:log/logback_${scaffold.env}.xml
