@@ -16,8 +16,8 @@
 ```xml
 <dependency>
     <groupId>com.xkcoding</groupId>
-    <artifactId>scaffold-${模块名}</artifactId>
-    <version>${当前最新版本}</version>
+    <artifactId>scaffold-${module}</artifactId>
+    <version>${scaffold.version}</version>
 </dependency>
 ```
  
