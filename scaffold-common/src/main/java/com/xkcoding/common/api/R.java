@@ -171,6 +171,31 @@ public class R<T> implements Serializable {
     /**
      * 返回R
      *
+     * @param resultCode 业务代码
+     * @param data       数据
+     * @param <T>        T 泛型标记
+     * @return R
+     */
+    public static <T> R<T> success(IResultCode resultCode, T data) {
+        return new R<>(resultCode, data);
+    }
+
+    /**
+     * 返回R
+     *
+     * @param resultCode 业务代码
+     * @param msg        消息
+     * @param data       数据
+     * @param <T>        T 泛型标记
+     * @return R
+     */
+    public static <T> R<T> success(IResultCode resultCode, String msg, T data) {
+        return new R<>(resultCode, data, msg);
+    }
+
+    /**
+     * 返回R
+     *
      * @param msg 消息
      * @param <T> T 泛型标记
      * @return R
@@ -213,6 +238,31 @@ public class R<T> implements Serializable {
      */
     public static <T> R<T> fail(IResultCode resultCode, String msg) {
         return new R<>(resultCode, msg);
+    }
+
+    /**
+     * 返回R
+     *
+     * @param resultCode 业务代码
+     * @param data       数据
+     * @param <T>        T 泛型标记
+     * @return R
+     */
+    public static <T> R<T> fail(IResultCode resultCode, T data) {
+        return new R<>(resultCode, data);
+    }
+
+    /**
+     * 返回R
+     *
+     * @param resultCode 业务代码
+     * @param msg        消息
+     * @param data       数据
+     * @param <T>        T 泛型标记
+     * @return R
+     */
+    public static <T> R<T> fail(IResultCode resultCode, String msg, T data) {
+        return new R<>(resultCode, data, msg);
     }
 
     /**

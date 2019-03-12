@@ -46,4 +46,13 @@ public interface INode {
      */
     List<INode> getChildren();
 
+    /**
+     * 添加子节点
+     *
+     * @param node 子节点
+     */
+    default void add(INode node) {
+        getChildren().add(node);
+    }
+
 }

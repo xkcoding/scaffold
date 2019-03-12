@@ -75,6 +75,7 @@
         <swagger.models.version>1.5.21</swagger.models.version>
         <swagger.bootstrapui.version>1.9.0</swagger.bootstrapui.version>
         <mybatis.plus.version>3.1.0</mybatis.plus.version>
+        <ip2region.version>1.7.2</ip2region.version>
 
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
