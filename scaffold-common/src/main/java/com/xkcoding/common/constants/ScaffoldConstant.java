@@ -51,4 +51,8 @@ public interface ScaffoldConstant {
      * 匿名用户
      */
     String ANONYMOUS_USER_NAME = "匿名用户";
+    /**
+     * 业务异常错误码
+     */
+    Integer SCAFFOLD_FAILURE_CODE = -1;
 }

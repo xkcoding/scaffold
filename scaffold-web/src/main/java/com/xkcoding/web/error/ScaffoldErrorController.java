@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.log.error;
+package com.xkcoding.web.error;
 
 import com.xkcoding.common.utils.JacksonUtil;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
@@ -26,7 +26,7 @@ import java.util.Map;
  * 更改默认html请求异常为ajax
  * </p>
  *
- * @package: com.xkcoding.log.error
+ * @package: com.xkcoding.web.error
  * @description: 更改默认html请求异常为ajax
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:58

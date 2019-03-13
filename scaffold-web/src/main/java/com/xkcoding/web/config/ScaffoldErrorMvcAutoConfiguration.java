@@ -6,11 +6,11 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.log.config;
+package com.xkcoding.web.config;
 
 
-import com.xkcoding.log.error.ScaffoldErrorAttributes;
-import com.xkcoding.log.error.ScaffoldErrorController;
+import com.xkcoding.web.error.ScaffoldErrorAttributes;
+import com.xkcoding.web.error.ScaffoldErrorController;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -34,7 +34,7 @@ import javax.servlet.Servlet;
  * 统一异常处理
  * </p>
  *
- * @package: com.xkcoding.log.config
+ * @package: com.xkcoding.web.config
  * @description: 统一异常处理
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:56

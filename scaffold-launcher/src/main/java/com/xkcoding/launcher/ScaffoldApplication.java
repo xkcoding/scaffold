@@ -35,7 +35,7 @@ import java.util.function.Function;
  * @modified: yangkai.shen
  */
 @Slf4j
-public class ScafflodApplication {
+public class ScaffoldApplication {
     /**
      * 创建Spring上下文
      * java -jar app.jar --spring.profiles.active=prod --server.port=2333
@@ -83,7 +83,7 @@ public class ScafflodApplication {
             // 同时存在dev、test、prod环境时
             throw new RuntimeException("同时存在环境变量:[" + StringUtils.arrayToCommaDelimitedString(activeProfiles) + "]");
         }
-        String startJarPath = ScafflodApplication.class.getResource("/").getPath().split("!")[0];
+        String startJarPath = ScaffoldApplication.class.getResource("/").getPath().split("!")[0];
         String activePros = joinFun.apply(activeProfileList.toArray());
         log.info("----启动中，读取到的环境变量:[{}]，jar地址:[{}]----", activePros, startJarPath);
         Properties props = System.getProperties();

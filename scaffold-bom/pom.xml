@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>scaffold</artifactId>
+        <groupId>com.xkcoding</groupId>
+        <version>1.0.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>scaffold-bom</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${scaffold.version}</version>
+    <packaging>pom</packaging>
+
+    <description>scaffold脚手架依赖版本管理</description>
+
+    <properties>
+        <scaffold.version>1.0.4</scaffold.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-launcher</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-common</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-log</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-test</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-swagger</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-web</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+</project>

@@ -9,7 +9,6 @@
 package com.xkcoding.common.api;
 
 import cn.hutool.core.util.ObjectUtil;
-import com.xkcoding.common.constants.ScaffoldConstant;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -18,7 +17,6 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.lang.Nullable;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.util.Optional;
 
@@ -54,19 +52,22 @@ public class R<T> implements Serializable {
     private T data;
 
     private R(IResultCode resultCode) {
-        this(resultCode, null, resultCode.getMessage());
+        this(resultCode, resultCode.getMessage(), null);
     }
 
     private R(IResultCode resultCode, String msg) {
-        this(resultCode, null, msg);
+        this(resultCode, msg, null);
     }
 
     private R(IResultCode resultCode, T data) {
-        this(resultCode, data, resultCode.getMessage());
+        this(resultCode, resultCode.getMessage(), data);
     }
 
-    private R(IResultCode resultCode, T data, String msg) {
-        this(resultCode.getCode(), data, msg);
+    private R(IResultCode resultCode, String msg, T data) {
+        this.code = resultCode.getCode();
+        this.msg = msg;
+        this.data = data;
+        this.success = ResultCode.SUCCESS == resultCode;
     }
 
     private R(int code, T data, String msg) {
@@ -99,198 +100,128 @@ public class R<T> implements Serializable {
     }
 
     /**
-     * 返回R
+     * 获取data
+     *
+     * @param result Result
+     * @param <T>    泛型标记
+     * @return 泛型对象
+     */
+    @Nullable
+    public static <T> T getData(@Nullable R<T> result) {
+        return Optional.ofNullable(result).filter(r -> r.success).map(x -> x.getData()).orElse(null);
+    }
+
+    /**
+     * 返回成功
+     *
+     * @param <T> 泛型标记
+     * @return Result
+     */
+    public static <T> R<T> success() {
+        return new R<>(ResultCode.SUCCESS);
+    }
+
+    /**
+     * 成功-携带数据
      *
      * @param data 数据
-     * @param <T>  T 泛型标记
-     * @return R
+     * @param <T>  泛型标记
+     * @return Result
      */
-    public static <T> R<T> data(T data) {
-        return data(data, ScaffoldConstant.DEFAULT_SUCCESS_MESSAGE);
+    public static <T> R<T> success(@Nullable T data) {
+        return new R<>(ResultCode.SUCCESS, data);
     }
 
     /**
-     * 返回R
+     * 根据状态返回成功或者失败
      *
-     * @param data 数据
-     * @param msg  消息
-     * @param <T>  T 泛型标记
-     * @return R
+     * @param status 状态
+     * @param msg    异常msg
+     * @param <T>    泛型标记
+     * @return Result
      */
-    public static <T> R<T> data(T data, String msg) {
-        return data(HttpServletResponse.SC_OK, data, msg);
+    public static <T> R<T> status(boolean status, String msg) {
+        return status ? R.success() : R.fail(msg);
     }
 
     /**
-     * 返回R
+     * 根据状态返回成功或者失败
      *
-     * @param code 状态码
-     * @param data 数据
-     * @param msg  消息
-     * @param <T>  T 泛型标记
-     * @return R
+     * @param status 状态
+     * @param sCode  异常code码
+     * @param <T>    泛型标记
+     * @return Result
      */
-    public static <T> R<T> data(int code, T data, String msg) {
-        return new R<>(code, data, data == null ? ScaffoldConstant.DEFAULT_NULL_MESSAGE : msg);
+    public static <T> R<T> status(boolean status, IResultCode sCode) {
+        return status ? R.success() : R.fail(sCode);
     }
 
     /**
-     * 返回R
+     * 返回失败
      *
-     * @param msg 消息
-     * @param <T> T 泛型标记
-     * @return R
+     * @param <T> 泛型标记
+     * @return Result
      */
-    public static <T> R<T> success(String msg) {
-        return new R<>(ResultCode.SUCCESS, msg);
+    public static <T> R<T> fail() {
+        return new R<>(ResultCode.FAILURE);
     }
 
     /**
-     * 返回R
+     * 返回失败信息，用于 web
      *
-     * @param resultCode 业务代码
-     * @param <T>        T 泛型标记
-     * @return R
-     */
-    public static <T> R<T> success(IResultCode resultCode) {
-        return new R<>(resultCode);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param resultCode 业务代码
-     * @param msg        消息
-     * @param <T>        T 泛型标记
-     * @return R
-     */
-    public static <T> R<T> success(IResultCode resultCode, String msg) {
-        return new R<>(resultCode, msg);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param resultCode 业务代码
-     * @param data       数据
-     * @param <T>        T 泛型标记
-     * @return R
-     */
-    public static <T> R<T> success(IResultCode resultCode, T data) {
-        return new R<>(resultCode, data);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param resultCode 业务代码
-     * @param msg        消息
-     * @param data       数据
-     * @param <T>        T 泛型标记
-     * @return R
-     */
-    public static <T> R<T> success(IResultCode resultCode, String msg, T data) {
-        return new R<>(resultCode, data, msg);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param msg 消息
-     * @param <T> T 泛型标记
-     * @return R
+     * @param msg 失败信息
+     * @param <T> 泛型标记
+     * @return {Result}
      */
     public static <T> R<T> fail(String msg) {
         return new R<>(ResultCode.FAILURE, msg);
     }
 
-
     /**
-     * 返回R
+     * 返回失败信息
      *
      * @param code 状态码
-     * @param msg  消息
-     * @param <T>  T 泛型标记
-     * @return R
+     * @param msg  失败信息
+     * @param <T>  泛型标记
+     * @return {Result}
      */
     public static <T> R<T> fail(int code, String msg) {
         return new R<>(code, null, msg);
     }
 
     /**
-     * 返回R
+     * 返回失败信息
      *
-     * @param resultCode 业务代码
-     * @param <T>        T 泛型标记
-     * @return R
+     * @param rCode 异常枚举
+     * @param <T>   泛型标记
+     * @return {Result}
      */
-    public static <T> R<T> fail(IResultCode resultCode) {
-        return new R<>(resultCode);
+    public static <T> R<T> fail(IResultCode rCode) {
+        return new R<>(rCode);
     }
 
     /**
-     * 返回R
+     * 返回失败信息
      *
-     * @param resultCode 业务代码
-     * @param msg        消息
-     * @param <T>        T 泛型标记
-     * @return R
+     * @param rCode 异常枚举
+     * @param msg   失败信息
+     * @param <T>   泛型标记
+     * @return {Result}
      */
-    public static <T> R<T> fail(IResultCode resultCode, String msg) {
-        return new R<>(resultCode, msg);
+    public static <T> R<T> fail(IResultCode rCode, String msg) {
+        return new R<>(rCode, msg);
     }
 
     /**
-     * 返回R
+     * 返回失败信息
      *
-     * @param resultCode 业务代码
-     * @param data       数据
-     * @param <T>        T 泛型标记
-     * @return R
+     * @param rCode 异常枚举
+     * @param data  数据
+     * @param <T>   泛型标记
+     * @return {Result}
      */
-    public static <T> R<T> fail(IResultCode resultCode, T data) {
-        return new R<>(resultCode, data);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param resultCode 业务代码
-     * @param msg        消息
-     * @param data       数据
-     * @param <T>        T 泛型标记
-     * @return R
-     */
-    public static <T> R<T> fail(IResultCode resultCode, String msg, T data) {
-        return new R<>(resultCode, data, msg);
-    }
-
-    /**
-     * 返回R
-     *
-     * @param flag 成功状态
-     * @return R
-     */
-    public static <T> R<T> status(boolean flag) {
-        return flag ? success(ScaffoldConstant.DEFAULT_SUCCESS_MESSAGE) : fail(ScaffoldConstant.DEFAULT_FAILURE_MESSAGE);
-    }
-
-    /**
-     * 返回R
-     *
-     * @return R
-     */
-    public static <T> R<T> success() {
-        return status(true);
-    }
-
-    /**
-     * 返回R
-     *
-     * @return R
-     */
-    public static <T> R<T> fail() {
-        return status(false);
+    public static <T> R<T> fail(IResultCode rCode, T data) {
+        return new R<>(rCode, data);
     }
 
 }

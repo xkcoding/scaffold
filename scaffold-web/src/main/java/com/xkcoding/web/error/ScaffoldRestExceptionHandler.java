@@ -6,14 +6,14 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.log.error;
+package com.xkcoding.web.error;
 
 import com.xkcoding.common.api.R;
 import com.xkcoding.common.api.ResultCode;
 import com.xkcoding.common.utils.UrlUtil;
 import com.xkcoding.common.utils.WebUtil;
-import com.xkcoding.log.exception.ServiceException;
 import com.xkcoding.log.publisher.ErrorLogPublisher;
+import com.xkcoding.web.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -46,7 +46,7 @@ import java.util.Set;
  * 全局异常处理，处理可预见的异常
  * </p>
  *
- * @package: com.xkcoding.log.error
+ * @package: com.xkcoding.web.error
  * @description: 全局异常处理，处理可预见的异常
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 15:22
@@ -140,7 +140,7 @@ public class ScaffoldRestExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public R handleError(ServiceException e) {
         log.error("业务异常", e);
-        return R.fail(e.getResultCode(), e.getMessage());
+        return R.fail(e.getResultCode(), e.getData());
     }
 
     @ExceptionHandler(Throwable.class)

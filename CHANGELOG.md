@@ -1,6 +1,19 @@
 # 变更记录
 
 ## 发行版本
+### [1.0.4] - 2018-03-13
+#### 新增
+**scaffold-bom** 统一管理scaffold模块依赖
+#### 修改
+- **scaffold-launcher**
+类名修改 ~~ScafflodApplication~~ ScaffoldApplication
+- **scaffold-common**
+R类方法重构
+- **scaffold-log**
+移除通用web异常处理
+- **scaffold-web**
+新增通用web异常处理
+
 ### [1.0.3] - 2018-03-12
 #### 新增
 - **scaffold-common**
@@ -9,14 +22,14 @@
 ### [1.0.2] - 2018-03-11
 #### 修改
 - **scaffold-web**
-①重构 RequestLogAspect 构建成一条长 日志，避免并发下日志错乱②日志配置文件移到当前包下
+①重构 `RequestLogAspect` 构建成一条长 日志，避免并发下日志错乱②日志配置文件移到当前包下
 
 ### [1.0.1] - 2018-03-11
 #### 修改
 - **scaffold-common**
-移除 MyBatis-Plus 通用配置
+移除 `MyBatis-Plus` 通用配置
 - **scaffold-web**
-新增 MyBatis-Plus 通用配置
+新增 `MyBatis-Plus` 通用配置
 - **scaffold-log**
 重命名默认日志实现类、登录信息实现类
 
@@ -25,7 +38,7 @@
 - **scaffold-launcher**
 通用启动器，方便设置环境配置
 - **scaffold-common**
-通用工具类，包含Controller层返回，分页查询条件，Mybatis-Plus通用配置，以及logback等配置等等
+通用工具类，包含`Controller`层返回，分页查询条件，`Mybatis-Plus`通用配置，以及`logback`等配置等等
 - **scaffold-test**
 通用单元测试，方便为单元测试类设置环境配置
 - **scaffold-log**

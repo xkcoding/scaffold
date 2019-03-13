@@ -9,7 +9,7 @@
 
 package com.xkcoding.test;
 
-import com.xkcoding.launcher.ScafflodApplication;
+import com.xkcoding.launcher.ScaffoldApplication;
 import com.xkcoding.launcher.service.LauncherService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.runners.model.InitializationError;
@@ -51,7 +51,7 @@ public class ScaffoldSpringRunner extends SpringJUnit4ClassRunner {
         }
         String appName = scaffoldTest.appName();
         String profile = scaffoldTest.profile();
-        boolean isLocalDev = ScafflodApplication.isLocalDev();
+        boolean isLocalDev = ScaffoldApplication.isLocalDev();
         Properties props = System.getProperties();
         props.setProperty("spring.application.name", appName);
         props.setProperty("spring.profiles.active", profile);

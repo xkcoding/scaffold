@@ -4,7 +4,7 @@
     <parent>
         <artifactId>scaffold</artifactId>
         <groupId>com.xkcoding</groupId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -21,6 +21,10 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.xkcoding</groupId>
             <artifactId>scaffold-launcher</artifactId>
             <version>${scaffold.version}</version>
@@ -28,6 +32,11 @@
         <dependency>
             <groupId>com.xkcoding</groupId>
             <artifactId>scaffold-common</artifactId>
+            <version>${scaffold.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xkcoding</groupId>
+            <artifactId>scaffold-log</artifactId>
             <version>${scaffold.version}</version>
         </dependency>
         <!--Mybatis-->

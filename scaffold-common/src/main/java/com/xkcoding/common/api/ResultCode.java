@@ -8,6 +8,7 @@
  */
 package com.xkcoding.common.api;
 
+import com.xkcoding.common.constants.ScaffoldConstant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -38,7 +39,7 @@ public enum ResultCode implements IResultCode {
     /**
      * 业务异常
      */
-    FAILURE(HttpServletResponse.SC_BAD_REQUEST, "业务异常"),
+    FAILURE(ScaffoldConstant.SCAFFOLD_FAILURE_CODE, "业务异常"),
 
     /**
      * 请求未授权

@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.log.error;
+package com.xkcoding.web.error;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.xkcoding.common.api.R;
@@ -25,7 +25,7 @@ import java.util.Map;
  * 全局异常处理
  * </p>
  *
- * @package: com.xkcoding.log.error
+ * @package: com.xkcoding.web.error
  * @description: 全局异常处理
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:56
