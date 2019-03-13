@@ -8,8 +8,7 @@
  */
 package com.xkcoding.common.node;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * <p>
@@ -29,15 +28,19 @@ public class ForestNodeManager<T extends INode> {
     /**
      * 森林的所有节点
      */
-    private List<T> list;
+    private Map<Integer, T> map;
 
     /**
      * 森林的父节点ID
      */
-    private List<Integer> parentIds = new ArrayList<>();
+    private List<Integer> parentIds;
 
     public ForestNodeManager(List<T> items) {
-        list = items;
+        this.parentIds = new LinkedList<>();
+        this.map = new HashMap<>(items.size());
+        for (T item : items) {
+            map.put(item.getId(), item);
+        }
     }
 
     /**
@@ -47,12 +50,7 @@ public class ForestNodeManager<T extends INode> {
      * @return 对应的节点对象
      */
     public INode getTreeNodeAT(int id) {
-        for (INode forestNode : list) {
-            if (forestNode.getId() == id) {
-                return forestNode;
-            }
-        }
-        return null;
+        return map.get(id);
     }
 
     /**
@@ -70,11 +68,9 @@ public class ForestNodeManager<T extends INode> {
      * @return 树的根节点集合
      */
     public List<T> getRoot() {
-        List<T> roots = new ArrayList<>();
-        for (T forestNode : list) {
-            if (forestNode.getParentId() == 0 || parentIds.contains(forestNode.getId())) {
-                roots.add(forestNode);
-            }
+        List<T> roots = new ArrayList<>(this.parentIds.size());
+        for (Integer id : parentIds) {
+            roots.add(map.get(id));
         }
         return roots;
     }

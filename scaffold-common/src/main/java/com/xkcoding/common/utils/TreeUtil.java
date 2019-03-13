@@ -15,8 +15,7 @@ import com.xkcoding.common.node.BaseNode;
 import com.xkcoding.common.node.ForestNodeManager;
 import com.xkcoding.common.node.INode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * <p>
@@ -41,7 +40,13 @@ public class TreeUtil {
      * @param <T>       节点泛型
      * @return 树列表
      */
-    public static <T extends BaseNode> List<T> build(List<T> treeNodes, Object root) {
+    public static <T extends BaseNode> List<T> build(List<T> treeNodes, Integer root) {
+
+        Map<Integer, T> map = new HashMap<>(treeNodes.size());
+
+        for (T node : treeNodes) {
+            map.put(node.getId(), node);
+        }
 
         List<T> trees = new ArrayList<>();
 
@@ -51,14 +56,15 @@ public class TreeUtil {
                 trees.add(treeNode);
             }
 
-            for (T it : treeNodes) {
-                if (ObjectUtil.equal(it.getParentId(), treeNode.getId())) {
-                    if (treeNode.getChildren() == null) {
-                        treeNode.setChildren(new ArrayList<>());
-                    }
-                    treeNode.add(it);
-                }
+            T t = map.get(treeNode.getParentId());
+            if (ObjectUtil.isNull(t)) {
+                continue;
             }
+
+            if (ObjectUtil.isNull(t.getChildren())) {
+                treeNode.setChildren(new LinkedList<>());
+            }
+            t.add(t);
         }
         return trees;
     }
@@ -71,7 +77,7 @@ public class TreeUtil {
      * @param <T>       节点泛型
      * @return 树列表
      */
-    public static <T extends BaseNode> List<T> buildByRecursive(List<T> treeNodes, Object root) {
+    public static <T extends BaseNode> List<T> buildByRecursive(List<T> treeNodes, Integer root) {
         List<T> trees = new ArrayList<>();
         for (T treeNode : treeNodes) {
             if (root.equals(treeNode.getParentId())) {
@@ -103,7 +109,7 @@ public class TreeUtil {
 
     /**
      * 将节点数组归并为一个森林（多棵树）（填充节点的children域）
-     * 时间复杂度为O(n^2)
+     * 时间复杂度为O(2n)
      *
      * @param items 节点域
      * @param <T>   T 泛型标记
@@ -112,13 +118,11 @@ public class TreeUtil {
     public static <T extends INode> List<T> merge(List<T> items) {
         ForestNodeManager<T> forestNodeManager = new ForestNodeManager<>(items);
         items.forEach(forestNode -> {
-            if (forestNode.getParentId() != 0) {
-                INode node = forestNodeManager.getTreeNodeAT(forestNode.getParentId());
-                if (node != null) {
-                    node.getChildren().add(forestNode);
-                } else {
-                    forestNodeManager.addParentId(forestNode.getId());
-                }
+            INode node = forestNodeManager.getTreeNodeAT(forestNode.getParentId());
+            if (node != null) {
+                node.add(forestNode);
+            } else {
+                forestNodeManager.addParentId(forestNode.getId());
             }
         });
         return forestNodeManager.getRoot();
