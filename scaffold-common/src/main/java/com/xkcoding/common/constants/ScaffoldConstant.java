@@ -55,4 +55,28 @@ public interface ScaffoldConstant {
      * 业务异常错误码
      */
     Integer SCAFFOLD_FAILURE_CODE = -1;
+    /**
+     * 验证码默认cookie名
+     */
+    String DEFAULT_CODE_COOKIE_NAME = "scaffold-code";
+    /**
+     * 验证码默认缓存
+     */
+    String DEFAULT_CODE_CACHE_NAME = "SCAFFOLD::CODE";
+    /**
+     * 验证码cookie超时默认为session会话状态
+     */
+    Integer DEFAULT_CODE_COOKIE_MAX_AGE = -1;
+    /**
+     * 验证码默认宽度
+     */
+    Integer DEFAULT_CODE_WIDTH = 108;
+    /**
+     * 验证码默认高度
+     */
+    Integer DEFAULT_CODE_HEIGHT = 40;
+    /**
+     * 验证码默认长度
+     */
+    Integer DEFAULT_CODE_LENGTH = 4;
 }

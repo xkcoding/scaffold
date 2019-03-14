@@ -5,7 +5,7 @@
     <parent>
         <artifactId>scaffold</artifactId>
         <groupId>com.xkcoding</groupId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,7 +17,7 @@
     <description>scaffold脚手架依赖版本管理</description>
 
     <properties>
-        <scaffold.version>1.0.4</scaffold.version>
+        <scaffold.version>1.0.5</scaffold.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +55,12 @@
             <dependency>
                 <groupId>com.xkcoding</groupId>
                 <artifactId>scaffold-web</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-code</artifactId>
                 <version>${scaffold.version}</version>
             </dependency>
         </dependencies>

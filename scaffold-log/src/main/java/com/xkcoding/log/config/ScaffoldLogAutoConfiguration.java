@@ -16,13 +16,16 @@ import com.xkcoding.log.event.ApiLogListener;
 import com.xkcoding.log.event.CustomLogListener;
 import com.xkcoding.log.event.ErrorLogListener;
 import com.xkcoding.log.logger.ScaffoldLogger;
+import com.xkcoding.log.props.ScaffoldLogProperties;
 import com.xkcoding.log.service.LogService;
 import com.xkcoding.log.service.SecurityService;
 import com.xkcoding.log.service.impl.DefaultScaffoldLogServiceImpl;
 import com.xkcoding.log.service.impl.DefaultScaffoldSecurityServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -42,6 +45,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @AllArgsConstructor
 @ConditionalOnWebApplication
+@EnableConfigurationProperties(ScaffoldLogProperties.class)
 public class ScaffoldLogAutoConfiguration {
 
     private final ServerInfo serverInfo;
@@ -60,6 +64,7 @@ public class ScaffoldLogAutoConfiguration {
     }
 
     @Bean
+    @ConditionalOnProperty(value = "scaffold.log.enabled", havingValue = "true")
     public ApiLogAspect apiLogAspect() {
         return new ApiLogAspect();
     }

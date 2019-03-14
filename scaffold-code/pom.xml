@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
@@ -8,27 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>scaffold-web</artifactId>
+    <artifactId>scaffold-code</artifactId>
+
     <name>${project.artifactId}</name>
     <version>${scaffold.version}</version>
     <packaging>jar</packaging>
 
-    <description>web通用配置</description>
+    <description>验证码组件</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!-- 对象池，使用redis时必须引入 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-context</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.xkcoding</groupId>
             <artifactId>scaffold-launcher</artifactId>
@@ -38,17 +27,6 @@
             <groupId>com.xkcoding</groupId>
             <artifactId>scaffold-common</artifactId>
             <version>${scaffold.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.xkcoding</groupId>
-            <artifactId>scaffold-log</artifactId>
-            <version>${scaffold.version}</version>
-        </dependency>
-        <!--Mybatis-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis.plus.version}</version>
         </dependency>
     </dependencies>
 
