@@ -25,6 +25,7 @@
         <module>scaffold-swagger</module>
         <module>scaffold-web</module>
         <module>scaffold-code</module>
+        <module>scaffold-notification</module>
     </modules>
     <packaging>pom</packaging>
 
