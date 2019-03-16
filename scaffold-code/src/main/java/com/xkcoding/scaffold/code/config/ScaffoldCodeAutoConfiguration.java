@@ -7,11 +7,11 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.code.config;
+package com.xkcoding.scaffold.code.config;
 
-import com.xkcoding.code.ScaffoldCode;
-import com.xkcoding.code.props.ScaffoldCodeProperties;
-import com.xkcoding.code.utils.CodeUtil;
+import com.xkcoding.scaffold.code.ScaffoldCode;
+import com.xkcoding.scaffold.code.props.ScaffoldCodeProperties;
+import com.xkcoding.scaffold.code.utils.CodeUtil;
 import com.xkcoding.scaffold.launcher.props.ScaffoldProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

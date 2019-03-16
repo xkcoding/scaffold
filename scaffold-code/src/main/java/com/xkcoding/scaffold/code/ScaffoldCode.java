@@ -7,16 +7,16 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.code;
+package com.xkcoding.scaffold.code;
 
 import cn.hutool.captcha.ShearCaptcha;
 import cn.hutool.captcha.generator.MathGenerator;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
-import com.xkcoding.code.constants.CodeTypeEnum;
-import com.xkcoding.code.exception.CodeErrorException;
-import com.xkcoding.code.props.ScaffoldCodeProperties;
-import com.xkcoding.code.utils.CodeUtil;
+import com.xkcoding.scaffold.code.constants.CodeTypeEnum;
+import com.xkcoding.scaffold.code.exception.CodeErrorException;
+import com.xkcoding.scaffold.code.props.ScaffoldCodeProperties;
+import com.xkcoding.scaffold.code.utils.CodeUtil;
 import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
 import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.scaffold.launcher.constants.AppConstant;
