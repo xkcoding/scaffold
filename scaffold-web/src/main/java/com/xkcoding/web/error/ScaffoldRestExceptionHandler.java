@@ -8,10 +8,10 @@
  */
 package com.xkcoding.web.error;
 
-import com.xkcoding.common.api.R;
-import com.xkcoding.common.api.ResultCode;
-import com.xkcoding.common.utils.UrlUtil;
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.api.R;
+import com.xkcoding.scaffold.common.api.ResultCode;
+import com.xkcoding.scaffold.common.utils.UrlUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.log.publisher.ErrorLogPublisher;
 import com.xkcoding.web.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;

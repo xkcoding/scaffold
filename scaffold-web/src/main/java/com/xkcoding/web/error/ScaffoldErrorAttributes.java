@@ -9,8 +9,8 @@
 package com.xkcoding.web.error;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.xkcoding.common.api.R;
-import com.xkcoding.common.api.ResultCode;
+import com.xkcoding.scaffold.common.api.R;
+import com.xkcoding.scaffold.common.api.ResultCode;
 import com.xkcoding.log.publisher.ErrorLogPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;

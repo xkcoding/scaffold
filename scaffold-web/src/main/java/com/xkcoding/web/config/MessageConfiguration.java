@@ -11,8 +11,8 @@ package com.xkcoding.web.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
-import com.xkcoding.common.jackson.MappingApiJackson2HttpMessageConverter;
-import com.xkcoding.common.utils.xss.XssFilter;
+import com.xkcoding.scaffold.common.jackson.MappingApiJackson2HttpMessageConverter;
+import com.xkcoding.scaffold.common.utils.xss.XssFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

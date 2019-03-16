@@ -6,37 +6,38 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
+package com.xkcoding.scaffold.common.node;
 
-package com.xkcoding.log.service.impl;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
-import com.xkcoding.log.service.SecurityService;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
- * 默认认证接口
+ * 森林节点类
  * </p>
  *
- * @package: com.xkcoding.log.service.impl
- * @description: 默认认证接口
+ * @package: com.xkcoding.scaffold.common.node
+ * @description: 森林节点类
  * @author: yangkai.shen
- * @date: Created in 2019-03-08 15:01
+ * @date: Created in 2019-03-07 15:55
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public class DefaultScaffoldSecurityServiceImpl implements SecurityService {
+@Data
+@EqualsAndHashCode(callSuper = false)
+public class ForestNode extends BaseNode {
 
     /**
-     * 获取当前用户姓名
-     *
-     * @param request request
-     * @return 当前用户名
+     * 节点内容
      */
-    @Override
-    public String getCurrentUserName(HttpServletRequest request) {
-        return ScaffoldConstant.ANONYMOUS_USER_NAME;
+    private Object content;
+
+    public ForestNode(Integer id, Integer parentId, Object content) {
+        this.id = id;
+        this.parentId = parentId;
+        this.content = content;
     }
+
 }

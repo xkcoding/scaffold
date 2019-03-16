@@ -9,8 +9,8 @@
 
 package com.xkcoding.log.publisher;
 
-import com.xkcoding.common.utils.SpringUtil;
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.utils.SpringUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.log.constant.EventConstant;
 import com.xkcoding.log.event.CustomLogEvent;
 import com.xkcoding.log.model.LogCustom;

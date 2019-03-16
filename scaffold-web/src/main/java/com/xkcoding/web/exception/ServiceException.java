@@ -8,8 +8,8 @@
  */
 package com.xkcoding.web.exception;
 
-import com.xkcoding.common.api.IResultCode;
-import com.xkcoding.common.api.ResultCode;
+import com.xkcoding.scaffold.common.api.IResultCode;
+import com.xkcoding.scaffold.common.api.ResultCode;
 import lombok.Getter;
 
 /**

@@ -8,7 +8,7 @@
  */
 package com.xkcoding.web.error;
 
-import com.xkcoding.common.utils.JacksonUtil;
+import com.xkcoding.scaffold.common.utils.JacksonUtil;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;

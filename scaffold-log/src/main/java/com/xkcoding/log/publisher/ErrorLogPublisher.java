@@ -10,8 +10,8 @@
 package com.xkcoding.log.publisher;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
-import com.xkcoding.common.utils.SpringUtil;
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.utils.SpringUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.log.constant.EventConstant;
 import com.xkcoding.log.event.ErrorLogEvent;
 import com.xkcoding.log.model.LogError;

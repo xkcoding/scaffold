@@ -12,8 +12,8 @@ package com.xkcoding.web.logger;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
-import com.xkcoding.common.utils.ClassUtil;
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.utils.ClassUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.scaffold.launcher.constants.AppConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -63,7 +63,7 @@ public class RequestLogAspect {
      * @return Object
      * @throws Throwable 异常
      */
-    @Around("execution(!static com.xkcoding.common.api.R *(..)) && " + "(@within(org.springframework.stereotype.Controller) || " + "@within(org.springframework.web.bind.annotation.RestController))")
+    @Around("execution(!static com.xkcoding.scaffold.common.api.R *(..)) && " + "(@within(org.springframework.stereotype.Controller) || " + "@within(org.springframework.web.bind.annotation.RestController))")
     public Object aroundApi(ProceedingJoinPoint point) throws Throwable {
         MethodSignature ms = (MethodSignature) point.getSignature();
         Method method = ms.getMethod();

@@ -8,7 +8,7 @@
  */
 package com.xkcoding.log.service;
 
-import com.xkcoding.common.api.R;
+import com.xkcoding.scaffold.common.api.R;
 import com.xkcoding.log.model.LogApi;
 import com.xkcoding.log.model.LogCustom;
 import com.xkcoding.log.model.LogError;

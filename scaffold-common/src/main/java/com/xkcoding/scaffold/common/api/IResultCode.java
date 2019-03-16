@@ -6,37 +6,37 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
+package com.xkcoding.scaffold.common.api;
 
-package com.xkcoding.log.service.impl;
-
-import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
-import com.xkcoding.log.service.SecurityService;
-
-import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
 
 /**
  * <p>
- * 默认认证接口
+ * 业务代码接口
  * </p>
  *
- * @package: com.xkcoding.log.service.impl
- * @description: 默认认证接口
+ * @package: com.xkcoding.scaffold.common.api
+ * @description: 业务代码接口
  * @author: yangkai.shen
- * @date: Created in 2019-03-08 15:01
+ * @date: Created in 2019-03-07 15:27
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public class DefaultScaffoldSecurityServiceImpl implements SecurityService {
+public interface IResultCode extends Serializable {
 
     /**
-     * 获取当前用户姓名
+     * 消息
      *
-     * @param request request
-     * @return 当前用户名
+     * @return String
      */
-    @Override
-    public String getCurrentUserName(HttpServletRequest request) {
-        return ScaffoldConstant.ANONYMOUS_USER_NAME;
-    }
+    String getMessage();
+
+    /**
+     * 状态码
+     *
+     * @return int
+     */
+    int getCode();
+
 }

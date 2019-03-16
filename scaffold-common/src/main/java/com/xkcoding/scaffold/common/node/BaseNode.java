@@ -6,37 +6,44 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
+package com.xkcoding.scaffold.common.node;
 
-package com.xkcoding.log.service.impl;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
 
-import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
-import com.xkcoding.log.service.SecurityService;
-
-import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
- * 默认认证接口
+ * 节点基类
  * </p>
  *
- * @package: com.xkcoding.log.service.impl
- * @description: 默认认证接口
+ * @package: com.xkcoding.scaffold.common.node
+ * @description: 节点基类
  * @author: yangkai.shen
- * @date: Created in 2019-03-08 15:01
+ * @date: Created in 2019-03-07 15:55
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public class DefaultScaffoldSecurityServiceImpl implements SecurityService {
+@Data
+public class BaseNode implements INode {
 
     /**
-     * 获取当前用户姓名
-     *
-     * @param request request
-     * @return 当前用户名
+     * 主键ID
      */
-    @Override
-    public String getCurrentUserName(HttpServletRequest request) {
-        return ScaffoldConstant.ANONYMOUS_USER_NAME;
-    }
+    protected Integer id;
+
+    /**
+     * 父节点ID
+     */
+    protected Integer parentId;
+
+    /**
+     * 子孙节点
+     */
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
+    protected List<INode> children = new ArrayList<>();
+
 }

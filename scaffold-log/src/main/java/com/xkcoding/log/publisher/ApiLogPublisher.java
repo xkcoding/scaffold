@@ -9,9 +9,9 @@
 
 package com.xkcoding.log.publisher;
 
-import com.xkcoding.common.constants.ScaffoldConstant;
-import com.xkcoding.common.utils.SpringUtil;
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
+import com.xkcoding.scaffold.common.utils.SpringUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.log.annotations.ApiLog;
 import com.xkcoding.log.constant.EventConstant;
 import com.xkcoding.log.event.ApiLogEvent;

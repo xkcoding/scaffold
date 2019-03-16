@@ -14,9 +14,9 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xkcoding.common.constants.ScaffoldConstant;
-import com.xkcoding.common.constants.StringConstant;
-import com.xkcoding.common.query.PageQuery;
+import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
+import com.xkcoding.scaffold.common.constants.StringConstant;
+import com.xkcoding.scaffold.common.query.PageQuery;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

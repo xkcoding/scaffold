@@ -10,7 +10,7 @@
 package com.xkcoding.code.props;
 
 import cn.hutool.core.util.RandomUtil;
-import com.xkcoding.common.constants.ScaffoldConstant;
+import com.xkcoding.scaffold.common.constants.ScaffoldConstant;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

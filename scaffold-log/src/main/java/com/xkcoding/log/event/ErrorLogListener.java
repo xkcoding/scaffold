@@ -9,7 +9,7 @@
 package com.xkcoding.log.event;
 
 
-import com.xkcoding.common.utils.WebUtil;
+import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.scaffold.launcher.props.ScaffoldProperties;
 import com.xkcoding.scaffold.launcher.server.ServerInfo;
 import com.xkcoding.log.constant.EventConstant;
