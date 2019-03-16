@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.web.config;
+package com.xkcoding.scaffold.web.config;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
@@ -20,6 +20,19 @@ import org.springframework.context.annotation.Profile;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <p>
+ * Mybatis-Plus配置
+ * </p>
+ *
+ * @package: com.xkcoding.scaffold.web.config
+ * @description: Mybatis-Plus配置
+ * @author: yangkai.shen
+ * @date: Created in 2019-03-07 17:34
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
 @Configuration
 public class MybatisPlusConfiguration {
 

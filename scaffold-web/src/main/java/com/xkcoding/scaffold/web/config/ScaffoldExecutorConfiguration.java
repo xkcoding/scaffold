@@ -6,9 +6,9 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.web.config;
+package com.xkcoding.scaffold.web.config;
 
-import com.xkcoding.web.props.ScaffoldAsyncProperties;
+import com.xkcoding.scaffold.web.props.ScaffoldAsyncProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler;
