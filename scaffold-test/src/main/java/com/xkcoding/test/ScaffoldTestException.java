@@ -14,7 +14,7 @@ package com.xkcoding.test;
  * test 异常
  * </p>
  *
- * @package: com.xkcoding.test
+ * @package: com.xkcoding.scaffold.test
  * @description: test 异常
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 09:51

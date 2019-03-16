@@ -26,7 +26,7 @@ import java.util.Map;
  * 更改默认html请求异常为ajax
  * </p>
  *
- * @package: com.xkcoding.web.error
+ * @package: com.xkcoding.scaffold.web.error
  * @description: 更改默认html请求异常为ajax
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:58

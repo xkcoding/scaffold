@@ -14,7 +14,7 @@ package com.xkcoding.code.exception;
  * 验证码异常
  * </p>
  *
- * @package: com.xkcoding.code.exception
+ * @package: com.xkcoding.scaffold.code.exception
  * @description: 验证码异常
  * @author: yangkai.shen
  * @date: Created in 2019-03-14 14:32

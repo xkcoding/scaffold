@@ -33,7 +33,7 @@ import java.time.Duration;
  * RedisTemplate 配置
  * </p>
  *
- * @package: com.xkcoding.web.config
+ * @package: com.xkcoding.scaffold.web.config
  * @description: RedisTemplate 配置
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:15

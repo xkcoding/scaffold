@@ -17,7 +17,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * 异步线程池配置
  * </p>
  *
- * @package: com.xkcoding.web.props
+ * @package: com.xkcoding.scaffold.web.props
  * @description: 异步线程池配置
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:14

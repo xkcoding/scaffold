@@ -28,7 +28,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 异步处理线程池配置
  * </p>
  *
- * @package: com.xkcoding.web.config
+ * @package: com.xkcoding.scaffold.web.config
  * @description: 异步处理线程池配置
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:17

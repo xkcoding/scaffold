@@ -27,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
  * 验证码自动装配
  * </p>
  *
- * @package: com.xkcoding.code.config
+ * @package: com.xkcoding.scaffold.code.config
  * @description: 验证码自动装配
  * @author: yangkai.shen
  * @date: Created in 2019-03-14 13:42

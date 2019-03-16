@@ -20,7 +20,7 @@ import org.springframework.retry.interceptor.RetryOperationsInterceptor;
  * 基于 Spring Retry 重试机制
  * </p>
  *
- * @package: com.xkcoding.web.config
+ * @package: com.xkcoding.scaffold.web.config
  * @description: 基于 Spring Retry 重试机制
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:18

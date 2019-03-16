@@ -12,7 +12,7 @@ import com.xkcoding.scaffold.common.api.R;
 import com.xkcoding.scaffold.common.api.ResultCode;
 import com.xkcoding.scaffold.common.utils.UrlUtil;
 import com.xkcoding.scaffold.common.utils.WebUtil;
-import com.xkcoding.log.publisher.ErrorLogPublisher;
+import com.xkcoding.scaffold.log.publisher.ErrorLogPublisher;
 import com.xkcoding.web.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.engine.path.PathImpl;
@@ -46,7 +46,7 @@ import java.util.Set;
  * 全局异常处理，处理可预见的异常
  * </p>
  *
- * @package: com.xkcoding.web.error
+ * @package: com.xkcoding.scaffold.web.error
  * @description: 全局异常处理，处理可预见的异常
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 15:22

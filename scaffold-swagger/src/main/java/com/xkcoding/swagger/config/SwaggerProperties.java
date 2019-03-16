@@ -20,7 +20,7 @@ import java.util.List;
  * Swagger配置项
  * </p>
  *
- * @package: com.xkcoding.swagger.config
+ * @package: com.xkcoding.scaffold.swagger.config
  * @description: Swagger配置项
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 17:24

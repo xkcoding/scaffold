@@ -18,7 +18,7 @@ import java.lang.annotation.*;
  * 简化 测试
  * </p>
  *
- * @package: com.xkcoding.test
+ * @package: com.xkcoding.scaffold.test
  * @description: 简化 测试
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 09:40

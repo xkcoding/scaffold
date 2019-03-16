@@ -17,7 +17,7 @@ import lombok.Getter;
  * 通用业务异常
  * </p>
  *
- * @package: com.xkcoding.web.exception
+ * @package: com.xkcoding.scaffold.web.exception
  * @description: 通用业务异常
  * @author: yangkai.shen
  * @date: Created in 2019-03-13 13:49

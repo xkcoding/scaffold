@@ -28,7 +28,7 @@ import java.util.ServiceLoader;
  * 设置启动参数
  * </p>
  *
- * @package: com.xkcoding.test
+ * @package: com.xkcoding.scaffold.test
  * @description: 设置启动参数
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 09:50

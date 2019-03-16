@@ -42,7 +42,7 @@ import java.awt.image.BufferedImage;
  * 图形验证码
  * </p>
  *
- * @package: com.xkcoding.code
+ * @package: com.xkcoding.scaffold.code
  * @description: 图形验证码
  * @author: yangkai.shen
  * @date: Created in 2019-03-14 13:35

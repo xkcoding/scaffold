@@ -42,7 +42,7 @@ import java.util.concurrent.TimeUnit;
  * Spring boot 控制器 请求日志，方便代码调试
  * </p>
  *
- * @package: com.xkcoding.web.logger
+ * @package: com.xkcoding.scaffold.web.logger
  * @description: Spring boot 控制器 请求日志，方便代码调试
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:25

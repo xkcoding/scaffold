@@ -7,28 +7,28 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.code.constants;
+package com.xkcoding.scaffold.log.service;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
- * 验证码类型
+ * 认证接口
  * </p>
  *
- * @package: com.xkcoding.scaffold.code.constants
- * @description: 验证码类型
+ * @package: com.xkcoding.scaffold.log.service
+ * @description: 认证接口
  * @author: yangkai.shen
- * @date: Created in 2019-03-14 14:07
+ * @date: Created in 2019-03-08 14:59
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public enum CodeTypeEnum {
+public interface SecurityService {
     /**
-     * 随机验证码
+     * 获取当前用户姓名
+     * @param request request
+     * @return 当前用户名
      */
-    RANDOM,
-    /**
-     * 算术验证码
-     */
-    MATH
+    String getCurrentUserName(HttpServletRequest request);
 }

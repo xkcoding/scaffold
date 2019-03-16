@@ -7,28 +7,29 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.code.constants;
+package com.xkcoding.scaffold.log.event;
+
+import org.springframework.context.ApplicationEvent;
+
+import java.util.Map;
 
 /**
  * <p>
- * 验证码类型
+ * 操作日志事件
  * </p>
  *
- * @package: com.xkcoding.scaffold.code.constants
- * @description: 验证码类型
+ * @package: com.xkcoding.scaffold.log.event
+ * @description: 操作日志事件
  * @author: yangkai.shen
- * @date: Created in 2019-03-14 14:07
+ * @date: Created in 2019-03-08 13:32
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public enum CodeTypeEnum {
-    /**
-     * 随机验证码
-     */
-    RANDOM,
-    /**
-     * 算术验证码
-     */
-    MATH
+public class ApiLogEvent extends ApplicationEvent {
+
+    public ApiLogEvent(Map<String, Object> source) {
+        super(source);
+    }
+
 }

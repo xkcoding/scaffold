@@ -11,7 +11,7 @@ package com.xkcoding.web.error;
 import cn.hutool.core.bean.BeanUtil;
 import com.xkcoding.scaffold.common.api.R;
 import com.xkcoding.scaffold.common.api.ResultCode;
-import com.xkcoding.log.publisher.ErrorLogPublisher;
+import com.xkcoding.scaffold.log.publisher.ErrorLogPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.lang.Nullable;
@@ -25,7 +25,7 @@ import java.util.Map;
  * 全局异常处理
  * </p>
  *
- * @package: com.xkcoding.web.error
+ * @package: com.xkcoding.scaffold.web.error
  * @description: 全局异常处理
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:56

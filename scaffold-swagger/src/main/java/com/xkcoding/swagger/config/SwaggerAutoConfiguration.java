@@ -36,7 +36,7 @@ import java.util.List;
  * swagger自动装配类
  * </p>
  *
- * @package: com.xkcoding.swagger.config
+ * @package: com.xkcoding.scaffold.swagger.config
  * @description: swagger自动装配类
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 17:29

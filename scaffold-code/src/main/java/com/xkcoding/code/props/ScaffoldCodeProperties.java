@@ -19,7 +19,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * 验证码配置
  * </p>
  *
- * @package: com.xkcoding.code.props
+ * @package: com.xkcoding.scaffold.code.props
  * @description: 验证码配置
  * @author: yangkai.shen
  * @date: Created in 2019-03-14 13:38

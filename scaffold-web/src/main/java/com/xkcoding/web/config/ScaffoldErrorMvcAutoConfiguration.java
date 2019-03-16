@@ -34,7 +34,7 @@ import javax.servlet.Servlet;
  * 统一异常处理
  * </p>
  *
- * @package: com.xkcoding.web.config
+ * @package: com.xkcoding.scaffold.web.config
  * @description: 统一异常处理
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 13:56

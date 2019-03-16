@@ -24,7 +24,7 @@ import lombok.AllArgsConstructor;
  * 验证码生成器
  * </p>
  *
- * @package: com.xkcoding.code.utils
+ * @package: com.xkcoding.scaffold.code.utils
  * @description: 验证码生成器
  * @author: yangkai.shen
  * @date: Created in 2019-03-14 15:25

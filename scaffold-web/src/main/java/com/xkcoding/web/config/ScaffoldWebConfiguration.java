@@ -17,7 +17,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * Web自动装配
  * </p>
  *
- * @package: com.xkcoding.web.config
+ * @package: com.xkcoding.scaffold.web.config
  * @description: Web自动装配
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 18:25

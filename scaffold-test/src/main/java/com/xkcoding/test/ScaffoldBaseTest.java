@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
  * test 基类
  * </p>
  *
- * @package: com.xkcoding.test
+ * @package: com.xkcoding.scaffold.test
  * @description: test 基类
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 09:43
