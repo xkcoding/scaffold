@@ -9,8 +9,8 @@
 
 package com.xkcoding.log.config;
 
-import com.xkcoding.launcher.props.ScaffoldProperties;
-import com.xkcoding.launcher.server.ServerInfo;
+import com.xkcoding.scaffold.launcher.props.ScaffoldProperties;
+import com.xkcoding.scaffold.launcher.server.ServerInfo;
 import com.xkcoding.log.aspectj.ApiLogAspect;
 import com.xkcoding.log.event.ApiLogListener;
 import com.xkcoding.log.event.CustomLogListener;

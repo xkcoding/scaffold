@@ -9,7 +9,7 @@
 
 package com.xkcoding.swagger.config;
 
-import com.xkcoding.launcher.constants.AppConstant;
+import com.xkcoding.scaffold.launcher.constants.AppConstant;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

@@ -10,8 +10,8 @@ package com.xkcoding.log.event;
 
 
 import com.xkcoding.common.utils.WebUtil;
-import com.xkcoding.launcher.props.ScaffoldProperties;
-import com.xkcoding.launcher.server.ServerInfo;
+import com.xkcoding.scaffold.launcher.props.ScaffoldProperties;
+import com.xkcoding.scaffold.launcher.server.ServerInfo;
 import com.xkcoding.log.constant.EventConstant;
 import com.xkcoding.log.model.LogError;
 import com.xkcoding.log.service.LogService;

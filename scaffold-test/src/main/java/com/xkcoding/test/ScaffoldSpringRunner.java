@@ -9,8 +9,8 @@
 
 package com.xkcoding.test;
 
-import com.xkcoding.launcher.ScaffoldApplication;
-import com.xkcoding.launcher.service.LauncherService;
+import com.xkcoding.scaffold.launcher.ScaffoldApplication;
+import com.xkcoding.scaffold.launcher.service.LauncherService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.runners.model.InitializationError;
 import org.springframework.boot.builder.SpringApplicationBuilder;

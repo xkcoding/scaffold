@@ -7,7 +7,7 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.launcher.utils;
+package com.xkcoding.scaffold.launcher.utils;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -17,11 +17,11 @@ import java.util.Enumeration;
 
 /**
  * <p>
- * INet 相关工具
+ * Ip 相关工具
  * </p>
  *
- * @package: com.xkcoding.launcher.utils
- * @description: INet 相关工具
+ * @package: com.xkcoding.scaffold.launcher.utils
+ * @description: IP 相关工具
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 15:17
  * @copyright: Copyright (c) 2019

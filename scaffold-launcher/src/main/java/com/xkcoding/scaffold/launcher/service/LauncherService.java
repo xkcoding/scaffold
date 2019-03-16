@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.launcher.service;
+package com.xkcoding.scaffold.launcher.service;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
@@ -15,7 +15,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  * launcher 扩展 用于一些组件发现
  * </p>
  *
- * @package: com.xkcoding.launcher.service
+ * @package: com.xkcoding.scaffold.launcher.service
  * @description: launcher 扩展 用于一些组件发现
  * @author: yangkai.shen
  * @date: Created in 2019-03-07 11:23

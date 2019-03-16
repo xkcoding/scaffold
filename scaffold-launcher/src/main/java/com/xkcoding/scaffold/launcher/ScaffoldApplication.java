@@ -7,10 +7,10 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.launcher;
+package com.xkcoding.scaffold.launcher;
 
-import com.xkcoding.launcher.constants.AppConstant;
-import com.xkcoding.launcher.service.LauncherService;
+import com.xkcoding.scaffold.launcher.constants.AppConstant;
+import com.xkcoding.scaffold.launcher.service.LauncherService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -26,7 +26,7 @@ import java.util.function.Function;
  * 脚手架通用启动器，解决服务名以及环境变量问题
  * </p>
  *
- * @package: com.xkcoding.launcher
+ * @package: com.xkcoding.scaffold.launcher
  * @description: 脚手架通用启动器，解决服务名以及环境变量问题
  * @author: yangkai.shen
  * @date: Created in 2019-03-07 11:21

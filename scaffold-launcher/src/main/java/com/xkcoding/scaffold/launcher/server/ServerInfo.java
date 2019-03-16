@@ -6,9 +6,9 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.launcher.server;
+package com.xkcoding.scaffold.launcher.server;
 
-import com.xkcoding.launcher.utils.IpUtil;
+import com.xkcoding.scaffold.launcher.utils.IpUtil;
 import lombok.Getter;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import org.springframework.util.ObjectUtils;
  * 服务器信息
  * </p>
  *
- * @package: com.xkcoding.launcher.server
+ * @package: com.xkcoding.scaffold.launcher.server
  * @description: 服务器信息
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 15:15

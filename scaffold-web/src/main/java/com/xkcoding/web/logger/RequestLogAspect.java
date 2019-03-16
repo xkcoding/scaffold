@@ -14,7 +14,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.xkcoding.common.utils.ClassUtil;
 import com.xkcoding.common.utils.WebUtil;
-import com.xkcoding.launcher.constants.AppConstant;
+import com.xkcoding.scaffold.launcher.constants.AppConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

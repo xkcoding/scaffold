@@ -12,7 +12,7 @@ package com.xkcoding.code.config;
 import com.xkcoding.code.ScaffoldCode;
 import com.xkcoding.code.props.ScaffoldCodeProperties;
 import com.xkcoding.code.utils.CodeUtil;
-import com.xkcoding.launcher.props.ScaffoldProperties;
+import com.xkcoding.scaffold.launcher.props.ScaffoldProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
