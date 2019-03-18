@@ -26,10 +26,10 @@ public interface ScaffoldNotificationConstant {
     /**
      * 邮箱模板引擎
      */
-    String EMAIL_TEMPLATE_ENGINE_BEAN = "EmailTemplateEngine";
+    String EMAIL_TEMPLATE_ENGINE_BEAN = "emailTemplateEngine";
 
     /**
      * 邮箱模板解析器
      */
-    String EMAIL_TEMPLATE_RESOLVER_BEAN = "EmailTemplateResolver";
+    String EMAIL_TEMPLATE_RESOLVER_BEAN = "emailTemplateResolver";
 }

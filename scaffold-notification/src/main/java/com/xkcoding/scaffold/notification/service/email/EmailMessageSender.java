@@ -22,6 +22,7 @@ import com.xkcoding.scaffold.notification.service.AbstractMessageSender;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -47,6 +48,7 @@ import javax.mail.internet.MimeMessage;
 @Slf4j
 @Component
 @AllArgsConstructor
+@ConditionalOnProperty(value = "scaffold.notification.email.enabled", havingValue = "true")
 public class EmailMessageSender extends AbstractMessageSender<EmailMessage> {
     private final JavaMailSender mailSender;
     @Qualifier(ScaffoldNotificationConstant.EMAIL_TEMPLATE_ENGINE_BEAN)

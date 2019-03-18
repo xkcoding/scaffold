@@ -12,6 +12,7 @@
 package com.xkcoding.scaffold.common.utils;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import com.xkcoding.scaffold.common.exception.ParamException;
@@ -20,6 +21,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -74,6 +76,12 @@ public class Assert {
 
     public static void isEmpty(Collection<?> collection, String message) {
         if (CollUtil.isEmpty(collection)) {
+            throw new ParamException(message);
+        }
+    }
+
+    public static void isEmpty(Map<?, ?> map, String message) {
+        if (MapUtil.isEmpty(map)) {
             throw new ParamException(message);
         }
     }

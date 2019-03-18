@@ -9,6 +9,7 @@
 
 package com.xkcoding.scaffold.notification.service.sms;
 
+import cn.hutool.json.JSONUtil;
 import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsRequest;
@@ -22,6 +23,7 @@ import com.xkcoding.scaffold.notification.props.SmsAliyunProperties;
 import com.xkcoding.scaffold.notification.service.AbstractMessageSender;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**
@@ -40,6 +42,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @AllArgsConstructor
+@ConditionalOnProperty(value = "scaffold.notification.aliyun.enabled", havingValue = "true")
 public class SmsAliyunMessageSender extends AbstractMessageSender<SmsMessage> {
     private final SmsAliyunProperties smsAliyunProperties;
     private static final String PRODUCT = "Dysmsapi";
@@ -53,7 +56,6 @@ public class SmsAliyunMessageSender extends AbstractMessageSender<SmsMessage> {
     @Override
     public void validate(SmsMessage message) {
         Assert.isBlank(message.getMobile(), "手机号不能为空");
-        Assert.isBlank(message.getContent(), "短信内容不能为空");
     }
 
     /**
@@ -91,10 +93,10 @@ public class SmsAliyunMessageSender extends AbstractMessageSender<SmsMessage> {
         request.setTemplateCode(smsAliyunProperties.getChannels().get(message.getTemplate()));
 
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"
-        request.setTemplateParam(message.getContent());
+        request.setTemplateParam(JSONUtil.toJsonStr(message.getParams()));
         request.setOutId(message.getMobile());
 
-        //hint 此处可能会抛出异常，注意catch
+        //此处可能会抛出异常，注意catch
         try {
             SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);
             log.info("短信发送完毕，手机号：{}，返回状态：{}", message.getMobile(), sendSmsResponse.getCode());

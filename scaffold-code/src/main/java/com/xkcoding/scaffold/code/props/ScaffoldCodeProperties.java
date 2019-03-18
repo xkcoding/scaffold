@@ -28,7 +28,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @modified: yangkai.shen
  */
 @Data
-@ConfigurationProperties("scaffold.code")
+@ConfigurationProperties(prefix = "scaffold.code")
 public class ScaffoldCodeProperties {
     /**
      * 是否启用验证码，默认值：false

@@ -13,6 +13,7 @@ import com.xkcoding.scaffold.notification.constants.ScaffoldNotificationConstant
 import com.xkcoding.scaffold.notification.props.EmailProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,6 +38,7 @@ import org.thymeleaf.templatemode.TemplateMode;
  */
 @Configuration
 @AllArgsConstructor
+@ConditionalOnProperty(value = "scaffold.notification.email.enabled", havingValue = "true")
 public class ScaffoldTemplateAutoConfiguration {
     private final EmailProperties emailProperties;
 

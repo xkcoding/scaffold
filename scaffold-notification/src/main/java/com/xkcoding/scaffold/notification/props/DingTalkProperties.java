@@ -10,9 +10,7 @@
 package com.xkcoding.scaffold.notification.props;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
@@ -28,10 +26,12 @@ import org.springframework.context.annotation.Configuration;
  * @modified: yangkai.shen
  */
 @Data
-@Configuration
-@ConditionalOnExpression("!'${scaffold.notification.dingtalk}'.isEmpty()")
 @ConfigurationProperties(prefix = "scaffold.notification.dingtalk")
 public class DingTalkProperties {
+    /**
+     * 是否启用
+     */
+    private boolean enabled = false;
     /**
      * webhook
      */

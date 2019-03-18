@@ -44,7 +44,7 @@ public class MarkdownDingTalkMessage extends AbstractDingTalkMessage {
     /**
      * 消息类型，此时固定为：markdown
      */
-    MarkdownDingTalkMessage() {
+    public MarkdownDingTalkMessage() {
         super(DingTalkType.MARKDOWN);
     }
 

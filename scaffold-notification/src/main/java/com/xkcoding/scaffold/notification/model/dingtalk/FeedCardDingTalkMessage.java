@@ -42,7 +42,7 @@ public class FeedCardDingTalkMessage extends AbstractDingTalkMessage {
     /**
      * 消息类型，此时固定为：feedCard
      */
-    FeedCardDingTalkMessage() {
+    public FeedCardDingTalkMessage() {
         super(DingTalkType.FEEDCARD);
     }
 

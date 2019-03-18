@@ -42,7 +42,7 @@ public class SingleActionCardDingTalkMessage extends AbstractDingTalkMessage {
     /**
      * 消息类型，此时固定为：actionCard
      */
-    SingleActionCardDingTalkMessage() {
+    public SingleActionCardDingTalkMessage() {
         super(DingTalkType.SINGLE_ACTIONCARD);
     }
 

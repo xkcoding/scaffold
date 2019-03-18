@@ -10,9 +10,7 @@
 package com.xkcoding.scaffold.notification.props;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
@@ -30,10 +28,12 @@ import java.util.Map;
  * @modified: yangkai.shen
  */
 @Data
-@Configuration
-@ConditionalOnExpression("!'${scaffold.notification.aliyun}'.isEmpty()")
 @ConfigurationProperties(prefix = "scaffold.notification.aliyun")
 public class SmsAliyunProperties {
+    /**
+     * 是否启用
+     */
+    private boolean enabled = false;
     /**
      * 应用ID
      */

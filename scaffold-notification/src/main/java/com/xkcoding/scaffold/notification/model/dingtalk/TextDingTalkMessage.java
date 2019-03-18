@@ -44,7 +44,7 @@ public class TextDingTalkMessage extends AbstractDingTalkMessage {
     /**
      * 消息类型，此时固定为：text
      */
-    TextDingTalkMessage() {
+    public TextDingTalkMessage() {
         super(DingTalkType.TEXT);
     }
 

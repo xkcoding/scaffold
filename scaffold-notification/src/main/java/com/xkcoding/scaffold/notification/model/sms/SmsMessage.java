@@ -9,10 +9,13 @@
 
 package com.xkcoding.scaffold.notification.model.sms;
 
+import com.google.common.collect.Maps;
 import com.xkcoding.scaffold.notification.model.Message;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
 
 
 /**
@@ -37,11 +40,11 @@ public class SmsMessage implements Message {
      */
     private String mobile;
     /**
-     * 组装后的模板内容JSON字符串
+     * 短信模板的参数
      */
-    private String content;
+    private Map<String, String> params = Maps.newHashMap();
     /**
-     * 短信类型(验证码或者通知短信)
+     * 短信类型(验证码或者通知短信)，
      */
     private String type;
     /**

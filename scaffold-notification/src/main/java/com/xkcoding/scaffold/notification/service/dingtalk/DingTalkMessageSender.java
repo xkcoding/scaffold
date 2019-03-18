@@ -17,6 +17,7 @@ import com.xkcoding.scaffold.notification.props.DingTalkProperties;
 import com.xkcoding.scaffold.notification.service.AbstractMessageSender;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**
@@ -35,6 +36,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @AllArgsConstructor
+@ConditionalOnProperty(value = "scaffold.notification.dingtalk.enabled", havingValue = "true")
 public class DingTalkMessageSender extends AbstractMessageSender<AbstractDingTalkMessage> {
     private final DingTalkProperties dingTalkProperties;
 

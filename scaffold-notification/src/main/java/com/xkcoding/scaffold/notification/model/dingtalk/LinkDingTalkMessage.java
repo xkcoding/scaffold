@@ -10,10 +10,8 @@
 package com.xkcoding.scaffold.notification.model.dingtalk;
 
 import com.xkcoding.scaffold.notification.constants.DingTalkType;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 /**
  * <p>
@@ -39,7 +37,7 @@ public class LinkDingTalkMessage extends AbstractDingTalkMessage {
     /**
      * 消息类型，此时固定为：link
      */
-    LinkDingTalkMessage() {
+    public LinkDingTalkMessage() {
         super(DingTalkType.LINK);
     }
 
