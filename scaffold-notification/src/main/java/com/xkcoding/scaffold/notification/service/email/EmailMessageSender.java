@@ -19,9 +19,9 @@ import com.xkcoding.scaffold.notification.constants.EmailType;
 import com.xkcoding.scaffold.notification.constants.ScaffoldNotificationConstant;
 import com.xkcoding.scaffold.notification.model.email.EmailMessage;
 import com.xkcoding.scaffold.notification.service.AbstractMessageSender;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -47,12 +47,17 @@ import javax.mail.internet.MimeMessage;
  */
 @Slf4j
 @Component
-@AllArgsConstructor
 @ConditionalOnProperty(value = "scaffold.notification.email.enabled", havingValue = "true")
 public class EmailMessageSender extends AbstractMessageSender<EmailMessage> {
     private final JavaMailSender mailSender;
-    @Qualifier(ScaffoldNotificationConstant.EMAIL_TEMPLATE_ENGINE_BEAN)
     private final TemplateEngine templateEngine;
+    @Value("${spring.mail.username:''}")
+    private String username;
+
+    public EmailMessageSender(JavaMailSender mailSender, @Qualifier(ScaffoldNotificationConstant.EMAIL_TEMPLATE_ENGINE_BEAN) TemplateEngine templateEngine) {
+        this.mailSender = mailSender;
+        this.templateEngine = templateEngine;
+    }
 
     /**
      * 数据校验
@@ -96,7 +101,7 @@ public class EmailMessageSender extends AbstractMessageSender<EmailMessage> {
         try {
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-            helper.setFrom(message.getFrom());
+            helper.setFrom("\"" + message.getFrom() + "\" <" + username + ">");
             helper.setTo(ArrayUtil.toArray(message.getTos(), String.class));
             helper.setSubject(message.getSubject());
 
@@ -150,7 +155,7 @@ public class EmailMessageSender extends AbstractMessageSender<EmailMessage> {
         // 注意邮件发送可能出现异常，注意catch
         try {
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-            simpleMailMessage.setFrom(message.getFrom());
+            simpleMailMessage.setFrom("\"" + message.getFrom() + "\" <" + username + ">");
             simpleMailMessage.setTo(ArrayUtil.toArray(message.getTos(), String.class));
             simpleMailMessage.setSubject(message.getSubject());
             simpleMailMessage.setText(message.getContent());
