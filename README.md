@@ -10,9 +10,9 @@ scaffold
 ├── scaffold-log          日志包
 ├── scaffold-swagger      swagger配置
 ├── scaffold-test         通用单元测试
+├── scaffold-web          通用web配置
 ├── scaffold-code         通用验证码组件
-├── scaffold-notification 通用通知组件
-└── scaffold-web          通用web配置
+└── scaffold-notification 通用通知组件  
 ```
 
 ## 安装方式
