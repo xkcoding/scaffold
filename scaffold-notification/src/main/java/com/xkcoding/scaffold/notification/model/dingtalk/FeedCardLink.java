@@ -7,27 +7,37 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.scaffold.notification.config;
+package com.xkcoding.scaffold.notification.model.dingtalk;
 
-import com.xkcoding.scaffold.notification.props.DingTalkProperties;
-import com.xkcoding.scaffold.notification.props.SmsAliyunProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>
- * 通知自动装配
+ * feedCard类型 链接
  * </p>
  *
- * @package: com.xkcoding.scaffold.notification.config
- * @description: 通知自动装配
+ * @package: com.xkcoding.scaffold.notification.model.dingtalk
+ * @description: feedCard类型 链接
  * @author: yangkai.shen
- * @date: Created in 2019-03-18 14:15
+ * @date: Created in 2019-03-18 14:09
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Configuration
-@EnableConfigurationProperties({DingTalkProperties.class,SmsAliyunProperties.class})
-public class ScaffoldNotificationAutoConfiguration {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class FeedCardLink extends BaseLink {
+    /**
+     * 点击单条信息到跳转链接
+     */
+    private String messageURL;
+    /**
+     * 单条信息后面图片的URL
+     */
+    private String picURL;
 }

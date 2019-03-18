@@ -7,27 +7,41 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.scaffold.notification.config;
+package com.xkcoding.scaffold.notification.model.dingtalk;
 
-import com.xkcoding.scaffold.notification.props.DingTalkProperties;
-import com.xkcoding.scaffold.notification.props.SmsAliyunProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>
- * 通知自动装配
+ * link类型
  * </p>
  *
- * @package: com.xkcoding.scaffold.notification.config
- * @description: 通知自动装配
+ * @package: com.xkcoding.scaffold.notification.model.dingtalk
+ * @description: link类型
  * @author: yangkai.shen
- * @date: Created in 2019-03-18 14:15
+ * @date: Created in 2019-03-18 14:06
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Configuration
-@EnableConfigurationProperties({DingTalkProperties.class,SmsAliyunProperties.class})
-public class ScaffoldNotificationAutoConfiguration {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class Link extends BaseLink {
+    /**
+     * 消息内容。如果太长只会部分展示
+     */
+    private String text;
+    /**
+     * 点击消息跳转的URL
+     */
+    private String messageUrl;
+    /**
+     * 图片URL
+     */
+    private String picUrl;
 }

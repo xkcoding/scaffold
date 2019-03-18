@@ -7,27 +7,33 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.scaffold.notification.config;
+package com.xkcoding.scaffold.notification.model.dingtalk;
 
-import com.xkcoding.scaffold.notification.props.DingTalkProperties;
-import com.xkcoding.scaffold.notification.props.SmsAliyunProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import com.xkcoding.scaffold.notification.constants.DingTalkType;
+import com.xkcoding.scaffold.notification.model.Message;
+import lombok.Data;
 
 /**
  * <p>
- * 通知自动装配
+ * 钉钉消息，参考文档：https://open-doc.dingtalk.com/microapp/serverapi2/qf2nxq
  * </p>
  *
- * @package: com.xkcoding.scaffold.notification.config
- * @description: 通知自动装配
+ * @package: com.xkcoding.scaffold.notification.model.dingtalk
+ * @description:
  * @author: yangkai.shen
- * @date: Created in 2019-03-18 14:15
+ * @date: Created in 2019-03-18 11:19
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Configuration
-@EnableConfigurationProperties({DingTalkProperties.class,SmsAliyunProperties.class})
-public class ScaffoldNotificationAutoConfiguration {
+@Data
+public abstract class AbstractDingTalkMessage implements Message {
+    /**
+     * 钉钉消息类型
+     */
+    private String msgtype;
+
+    AbstractDingTalkMessage(DingTalkType dingTalkType) {
+        this.msgtype = dingTalkType.getType();
+    }
 }

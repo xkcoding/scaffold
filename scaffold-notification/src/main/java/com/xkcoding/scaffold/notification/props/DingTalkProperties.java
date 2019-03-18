@@ -7,27 +7,33 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 
-package com.xkcoding.scaffold.notification.config;
+package com.xkcoding.scaffold.notification.props;
 
-import com.xkcoding.scaffold.notification.props.DingTalkProperties;
-import com.xkcoding.scaffold.notification.props.SmsAliyunProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import lombok.Data;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
- * 通知自动装配
+ * 钉钉机器人配置
  * </p>
  *
- * @package: com.xkcoding.scaffold.notification.config
- * @description: 通知自动装配
+ * @package: com.xkcoding.scaffold.notification.props
+ * @description: 钉钉机器人配置
  * @author: yangkai.shen
- * @date: Created in 2019-03-18 14:15
+ * @date: Created in 2019-03-18 10:35
  * @copyright: Copyright (c) 2019
  * @version: V1.0
  * @modified: yangkai.shen
  */
+@Data
 @Configuration
-@EnableConfigurationProperties({DingTalkProperties.class,SmsAliyunProperties.class})
-public class ScaffoldNotificationAutoConfiguration {
+@ConditionalOnExpression("!'${scaffold.notification.dingtalk}'.isEmpty()")
+@ConfigurationProperties(prefix = "scaffold.notification.dingtalk")
+public class DingTalkProperties {
+    /**
+     * webhook
+     */
+    private String webhook;
 }
