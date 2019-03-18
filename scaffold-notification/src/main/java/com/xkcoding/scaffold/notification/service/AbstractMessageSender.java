@@ -9,6 +9,8 @@
 
 package com.xkcoding.scaffold.notification.service;
 
+import com.xkcoding.scaffold.notification.model.Message;
+
 /**
  * <p>
  * 消息发送器抽象类
@@ -22,13 +24,42 @@ package com.xkcoding.scaffold.notification.service;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public abstract class AbstractMessageSender implements MessageSenderService {
-
+public abstract class AbstractMessageSender<T extends Message> implements MessageSenderService<T> {
+    /**
+     * 执行入口
+     *
+     * @param message 消息实体
+     */
     @Override
-    public void execute() {
-        check();
-        if (!process()) {
-            failHandler();
+    public void execute(T message) {
+        validate(message);
+        if (!process(message)) {
+            fail(message);
         }
     }
+
+    /**
+     * 数据校验
+     *
+     * @param message 消息实体
+     */
+    @Override
+    public abstract void validate(T message);
+
+    /**
+     * 业务处理
+     *
+     * @param message 消息实体
+     * @return boolean
+     */
+    @Override
+    public abstract boolean process(T message);
+
+    /**
+     * 失败处理
+     *
+     * @param message 消息实体
+     */
+    @Override
+    public abstract void fail(T message);
 }

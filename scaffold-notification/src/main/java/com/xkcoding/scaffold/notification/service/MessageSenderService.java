@@ -9,6 +9,8 @@
 
 package com.xkcoding.scaffold.notification.service;
 
+import com.xkcoding.scaffold.notification.model.Message;
+
 /**
  * <p>
  * 信息发送接口
@@ -22,26 +24,33 @@ package com.xkcoding.scaffold.notification.service;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-public interface MessageSenderService {
+public interface MessageSenderService<T extends Message> {
     /**
      * 执行入口
+     *
+     * @param message 消息实体
      */
-    void execute();
+    void execute(T message);
 
     /**
      * 数据校验
+     *
+     * @param message 消息实体
      */
-    void check();
+    void validate(T message);
 
     /**
      * 业务处理
      *
+     * @param message 消息实体
      * @return boolean
      */
-    boolean process();
+    boolean process(T message);
 
     /**
      * 失败处理
+     *
+     * @param message 消息实体
      */
-    void failHandler();
+    void fail(T message);
 }

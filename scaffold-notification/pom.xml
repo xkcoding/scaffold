@@ -15,7 +15,12 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!--阿里大鱼-->
+        <dependency>
+            <groupId>com.xkcoding</groupId>
+            <artifactId>scaffold-common</artifactId>
+            <version>${scaffold.version}</version>
+        </dependency>
+        <!-- 阿里大鱼 -->
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
@@ -25,6 +30,16 @@
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
             <version>1.1.0</version>
+        </dependency>
+        <!-- Spring Boot 邮件依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!-- Spring Boot 模板依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 

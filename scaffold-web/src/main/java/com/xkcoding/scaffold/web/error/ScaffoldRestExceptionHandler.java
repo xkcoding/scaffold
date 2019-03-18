@@ -10,10 +10,10 @@ package com.xkcoding.scaffold.web.error;
 
 import com.xkcoding.scaffold.common.api.R;
 import com.xkcoding.scaffold.common.api.ResultCode;
+import com.xkcoding.scaffold.common.exception.ServiceException;
 import com.xkcoding.scaffold.common.utils.UrlUtil;
 import com.xkcoding.scaffold.common.utils.WebUtil;
 import com.xkcoding.scaffold.log.publisher.ErrorLogPublisher;
-import com.xkcoding.scaffold.web.exception.ServiceException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.internal.engine.path.PathImpl;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
