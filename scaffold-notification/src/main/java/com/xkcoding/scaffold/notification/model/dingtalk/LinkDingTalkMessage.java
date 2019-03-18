@@ -43,5 +43,4 @@ public class LinkDingTalkMessage extends AbstractDingTalkMessage {
         super(DingTalkType.LINK);
     }
 
-
 }
