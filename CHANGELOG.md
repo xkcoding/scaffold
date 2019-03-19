@@ -1,6 +1,10 @@
 # 变更记录
 
 ## 发行版本
+### [1.0.7] - 2018-03-19
+#### 修改
+**scaffold-notification** 紧急修复 EmailSender 发件人信息的bug
+
 ### [1.0.6] - 2018-03-18
 #### 新增
 **scaffold-notification** 通用通知组件，支持短信、钉钉、邮箱
