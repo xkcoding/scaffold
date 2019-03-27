@@ -69,6 +69,12 @@
                 <artifactId>scaffold-notification</artifactId>
                 <version>${scaffold.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.xkcoding</groupId>
+                <artifactId>scaffold-codegen</artifactId>
+                <version>${scaffold.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

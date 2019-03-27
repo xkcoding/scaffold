@@ -13,6 +13,7 @@ import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrap
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.xkcoding.scaffold.launcher.constants.AppConstant;
+import com.xkcoding.scaffold.swagger.props.SwaggerProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

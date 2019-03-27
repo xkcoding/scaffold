@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>scaffold</artifactId>
+    <groupId>com.xkcoding</groupId>
+    <version>1.0.7</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>scaffold-codegen</artifactId>
+
+  <name>${project.artifactId}</name>
+  <version>${scaffold.version}</version>
+  <packaging>jar</packaging>
+
+  <description>代码生成器组件</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>scaffold-launcher</artifactId>
+      <version>${scaffold.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>scaffold-common</artifactId>
+      <version>${scaffold.version}</version>
+    </dependency>
+    <!--velocity代码生成使用模板 -->
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>${velocity.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-text</artifactId>
+      <version>${commons-text.version}</version>
+    </dependency>
+    <!--mybatis-->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>${mybatis.plus.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+  </build>
+</project>

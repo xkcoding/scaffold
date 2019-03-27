@@ -1,0 +1,270 @@
+<!--
+  ~ Copyright 2019 Yangkai.Shen
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>scaffold-codegen</title>
+    <!-- import Vue.js -->
+    <script src="./libs/vue/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="./libs/iview/iview.css">
+    <!-- import iView -->
+    <script src="./libs/iview/iview.min.js"></script>
+    <!-- import axios -->
+    <script src="./libs/axios/axios.min.js"></script>
+    <!-- import date -->
+    <script src="./libs/datejs/date-zh-CN.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        #app {
+            height: inherit;
+        }
+
+        .xkcoding-layout {
+            height: inherit;
+        }
+
+        .layout-header-center {
+            text-align: center;
+        }
+
+        .layout-footer-center {
+            color: #999999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <Layout class="xkcoding-layout">
+        <Header class="layout-header-center">
+            <h1>scaffold-codegen 代码生成器</h1>
+        </Header>
+        <Content :style="{padding: '0 50px'}">
+            <Card>
+                <Row :gutter="16">
+                    <i-form ref="formTableRequest" :model="tableRequest" label-position="right" label-width="50">
+                        <i-col span="5">
+                            <form-item label="表名" prop="tableName" label-width="40">
+                                <i-input v-model="tableRequest.tableName" placeholder="请输入数据库表名"></i-input>
+                            </form-item>
+                        </i-col>
+
+                        <i-col span="2" style="text-align: center">
+                            <i-button type="primary" long icon="ios-search" @click="search(false)">查询
+                            </i-button>
+                        </i-col>
+                    </i-form>
+                </Row>
+                <Row>
+                    <i-col>
+                        <i-table border :columns="columns" :data="data">
+                            <template slot-scope="{ row }" slot="tableName">
+                                <strong>{{ row.tableName }}</strong>
+                            </template>
+                            <template slot-scope="{ row }" slot="action">
+                                <i-button type="primary" icon="md-code-download" @click="showConfig(row.tableName)">生成代码
+                                </i-button>
+                            </template>
+                        </i-table>
+                    </i-col>
+                </Row>
+                <br>
+                <Row>
+                    <i-col>
+                        <Page :total="total"
+                              :current.sync="tableRequest.currentPage"
+                              @on-change="changePage"
+                              @on-page-size-change="changePageSize"
+                              show-sizer
+                              show-elevator
+                              show-total
+                              :page-size-opts="[10, 20, 30]"></Page>
+                    </i-col>
+                </Row>
+            </Card>
+        </Content>
+        <Footer class="layout-footer-center">2019 &copy; xkcoding</Footer>
+    </Layout>
+
+    <Modal v-model="showConfigDialog"
+           :closable="false">
+        <div slot="header" style="text-align:center">
+            <h2>代码生成配置</h2>
+        </div>
+        <i-form ref="form" :model="genConfig">
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="表名" prop="tableName" label-width="40">
+                        <i-input v-model="genConfig.tableName" disabled></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="包名" prop="packageName" label-width="40">
+                        <i-input v-model="genConfig.packageName" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="作者" prop="author" label-width="40">
+                        <i-input v-model="genConfig.author" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="模块" prop="moduleName" label-width="40">
+                        <i-input v-model="genConfig.moduleName" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="前缀" prop="tablePrefix" label-width="40">
+                        <i-input v-model="genConfig.tablePrefix" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="注释" prop="comments" label-width="40">
+                        <i-input v-model="genConfig.comments" placeholder="可为空，加载数据库表注释"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+        </i-form>
+        <div slot="footer" style="text-align:center">
+            <i-button icon="md-trash" size="large" @click="cancel">取消</i-button>
+            <i-button type="success" icon="md-cloud-download" size="large" @click="download">生成代码</i-button>
+        </div>
+    </Modal>
+</div>
+<script>
+  const http = axios.create({
+    baseURL: './scaffold/codegen'
+  });
+
+  new Vue({
+    el: "#app",
+    data: {
+      showConfigDialog: false,
+      genConfig: {
+        packageName: "",
+        author: "",
+        moduleName: "",
+        tablePrefix: "",
+        comments: "",
+        tableName: ""
+      },
+      tableRequest: {
+        currentPage: 1,
+        pageSize: 10,
+        tableName: ""
+      },
+      total: 0,
+      columns: [
+        {
+          title: '序号',
+          type: 'index',
+          align: 'center',
+          width: 80
+        },
+        {
+          title: '表名',
+          slot: 'tableName',
+          align: 'center'
+        },
+        {
+          title: '注释',
+          key: 'tableComment',
+          align: 'center'
+        },
+        {
+          title: '索引',
+          key: 'engine',
+          align: 'center'
+        },
+        {
+          title: '创建时间',
+          key: 'createTime',
+          align: 'center'
+        },
+        {
+          title: '操作',
+          slot: 'action',
+          width: 150,
+          align: 'center'
+        }
+      ],
+      data: []
+    },
+    methods: {
+      showConfig(tableName) {
+        this.genConfig.tableName = tableName;
+        this.genConfig.comments = "";
+        this.showConfigDialog = true;
+      },
+      changePage(currentPage) {
+        this.tableRequest.currentPage = currentPage;
+        this.search(true);
+      },
+      changePageSize(pageSize) {
+        this.tableRequest.pageSize = pageSize;
+        this.search(true);
+      },
+      search(isPageChange) {
+        if (!isPageChange) {
+          this.tableRequest.currentPage = 1;
+        }
+        http.get('/table', {
+            params: this.tableRequest
+          })
+          .then(response => {
+            const data = response.data;
+            if (data.code === 200 && data.success) {
+              this.data = data.data.records;
+              this.total = data.data.total;
+            }
+          })
+          .catch(() => this.$Message.error("查询失败"));
+      },
+      download() {
+        http({
+          url: '',
+          method: 'post',
+          data: this.genConfig,
+          responseType: 'arraybuffer'
+        }).then((response) => { // 处理返回的文件流
+          let blob = new Blob([response.data], {type: 'application/zip'});
+          let filename = this.genConfig.tableName + '.zip';
+          let link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          window.setTimeout(() => {
+            URL.revokeObjectURL(blob);
+            document.body.removeChild(link);
+            this.showConfigDialog = false;
+          }, 0)
+        }).catch(() => this.$Message.error("代码生成失败"));
+      },
+      cancel() {
+        this.showConfigDialog = false;
+      }
+    },
+    mounted() {
+      this.search(false);
+    }
+  })
+</script>
+</body>
+</html>

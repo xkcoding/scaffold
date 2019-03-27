@@ -6,7 +6,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
-package com.xkcoding.scaffold.swagger.config;
+package com.xkcoding.scaffold.swagger.props;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.List;
  * Swagger配置项
  * </p>
  *
- * @package: com.xkcoding.scaffold.swagger.config
+ * @package: com.xkcoding.scaffold.swagger.props
  * @description: Swagger配置项
  * @author: yangkai.shen
  * @date: Created in 2019-03-08 17:24

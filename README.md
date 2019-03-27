@@ -2,7 +2,7 @@
 > scaffold is some tools just for easy and happy coding!
 
 ## 模块介绍
-```
+```bash
 scaffold
 ├── scaffold-bom          scaffold依赖管理
 ├── scaffold-common       通用工具类
@@ -12,7 +12,8 @@ scaffold
 ├── scaffold-test         通用单元测试
 ├── scaffold-web          通用web配置
 ├── scaffold-code         通用验证码组件
-└── scaffold-notification 通用通知组件  
+├── scaffold-notification 通用通知组件
+└── scaffold-codegen      代码生成器
 ```
 
 ## 安装方式

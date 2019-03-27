@@ -1,0 +1,54 @@
+/*
+ * Copyright 2019 Yangkai.Shen
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ */
+
+package ${package}.${moduleName}.model;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @package:  ${package}.${moduleName}.model
+ * @description: ${comments}
+ * @author: ${author}
+ * @date: Created in ${datetime}
+ * @copyright: Copyright (c) ${year}
+ * @version: V1.0
+ * @modified: ${author}
+ */
+@Data
+@TableName("${tableName}")
+@ApiModel(description = "${comments}")
+@EqualsAndHashCode(callSuper = true)
+public class ${className} extends Model<${className}> {
+    private static final long serialVersionUID = 1L;
+
+  #foreach ($column in $columns)
+    /**
+     * $column.comments
+     */
+    #if($column.columnName == $pk.columnName)
+    @TableId
+    #end
+    @ApiModelProperty(value = "$column.comments")
+    private $column.attrType $column.lowerAttrName;
+  #end
+
+}
