@@ -81,7 +81,7 @@
     <mybatis.plus.version>3.1.0</mybatis.plus.version>
     <ip2region.version>1.7.2</ip2region.version>
     <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
-    <velocity.version>1.7</velocity.version>
+    <velocity.version>2.1</velocity.version>
     <commons-text.version>1.6</commons-text.version>
 
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
