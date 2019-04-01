@@ -2,20 +2,18 @@
 
 ## 发行版本
 
-### [1.0.8] - 2018-03-27
-
-#### 新增
-
-**scaffold-codegen** 代码生成器，仅支持mysql数据库
-
+### [1.0.9] - xxxx
 #### 修改
+**scaffold-codegen** 升级 velocity 依赖 1.7 --> 2.1，解决代码生成排版不美观问题
 
+### [1.0.8] - 2018-03-27
+#### 新增
+**scaffold-codegen** 代码生成器，仅支持mysql数据库
+#### 修改
 **scaffold-swagger** 配置类移动包目录
 
 ### [1.0.7] - 2018-03-19
-
 #### 修改
-
 **scaffold-notification** 紧急修复 EmailSender 发件人信息的bug
 
 ### [1.0.6] - 2018-03-18
