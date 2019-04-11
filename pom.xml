@@ -15,7 +15,7 @@
 
   <groupId>com.xkcoding</groupId>
   <artifactId>scaffold</artifactId>
-  <version>1.0.9</version>
+  <version>1.0.10</version>
   <modules>
     <module>scaffold-bom</module>
     <module>scaffold-launcher</module>
@@ -71,7 +71,7 @@
     <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
     <maven.plugin.version>3.8.0</maven.plugin.version>
 
-    <scaffold.version>1.0.9</scaffold.version>
+    <scaffold.version>1.0.10</scaffold.version>
     <mica.auto.version>1.0.2</mica.auto.version>
     <hutool.version>4.5.1</hutool.version>
     <guava.version>27.0.1-jre</guava.version>
