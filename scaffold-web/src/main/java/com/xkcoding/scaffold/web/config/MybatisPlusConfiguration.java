@@ -13,7 +13,9 @@ import com.baomidou.mybatisplus.extension.parsers.BlockAttackSqlParser;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.xkcoding.scaffold.launcher.constants.AppConstant;
+import com.xkcoding.scaffold.web.condition.DatasourceCondition;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -34,6 +36,7 @@ import java.util.List;
  * @modified: yangkai.shen
  */
 @Configuration
+@Conditional(DatasourceCondition.class)
 public class MybatisPlusConfiguration {
 
     /**

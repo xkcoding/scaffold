@@ -13,7 +13,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
 import com.xkcoding.scaffold.common.jackson.MappingApiJackson2HttpMessageConverter;
 import com.xkcoding.scaffold.common.utils.xss.XssFilter;
+import com.xkcoding.scaffold.web.props.ScaffoldXssProperties;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +44,7 @@ import java.util.List;
  */
 @Configuration
 @AllArgsConstructor
+@EnableConfigurationProperties({ScaffoldXssProperties.class})
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class MessageConfiguration implements WebMvcConfigurer {
 
@@ -66,6 +70,7 @@ public class MessageConfiguration implements WebMvcConfigurer {
      */
     @Bean
     @SuppressWarnings("unchecked")
+    @ConditionalOnProperty(prefix = "scaffold.xss", value = "enabled", havingValue = "true")
     public FilterRegistrationBean xssFilterRegistration() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setDispatcherTypes(DispatcherType.REQUEST);
