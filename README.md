@@ -17,7 +17,8 @@ scaffold
 ```
 
 ## 安装方式
-当前最新版本 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.xkcoding/scaffold/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.xkcoding/scaffold)
+当前最新版本 [![Maven Central] (https://maven-badges.herokuapp.com/maven-central/com.xkcoding/scaffold/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.xkcoding/scaffold)
+[![Build Status](https://travis-ci.com/xkcoding/scaffold.svg?branch=master)](https://travis-ci.com/xkcoding/scaffold)
 ```xml
 <dependency>
     <groupId>com.xkcoding</groupId>
