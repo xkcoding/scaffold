@@ -36,7 +36,7 @@ https://xkcoding.com/2019/03/12/scaffold-doc.html
 ## TODO
 - **scaffold-cache** 通用基于redis或者ehcache的缓存配置，设计缓存key，保证全系统key统一
 - **scaffold-auth** 通用认证授权配置
-- **scaffold-cloud** 基于spring cloud的扩展
+- **scaffold-cloud** 基于`spring cloud`的一些扩展
 
 ---
 Thanks [mica](https://github.com/lets-mica/mica)!
