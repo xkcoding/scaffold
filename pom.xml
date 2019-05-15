@@ -73,7 +73,7 @@
 
     <scaffold.version>1.0.10</scaffold.version>
     <mica.auto.version>1.0.2</mica.auto.version>
-    <hutool.version>4.5.1</hutool.version>
+    <hutool.version>4.5.10</hutool.version>
     <guava.version>27.0.1-jre</guava.version>
     <swagger.version>2.9.2</swagger.version>
     <swagger.models.version>1.5.21</swagger.models.version>
